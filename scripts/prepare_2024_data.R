@@ -1,7 +1,7 @@
 library(jsonlite)
 library(tidyverse)
 
-json_2024 <- fromJSON("../data/2024_results.json")
+json_2024 <- fromJSON("../data/2024_results_full.json")
 
 season <- json_2024[['MRData']][['RaceTable']][['season']] 
 round <- json_2024[['MRData']][['RaceTable']][['Races']][['round']]
