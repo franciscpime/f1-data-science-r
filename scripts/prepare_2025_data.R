@@ -36,5 +36,8 @@ for (i in seq(1, length(round))) {
 
     round_data[[i]] <- current_round
 }
+
 data_2025 <- bind_rows(round_data)
+
+save(data_2025, file = "../data/data_2025.RData")
 print(data_2025, width = Inf)
