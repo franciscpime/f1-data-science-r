@@ -74,7 +74,7 @@ test_data <- f1_data |>
 
 test_data <- test_data |>
                 ungroup() |>
-                mutate(predicted_position = predict(model, newdata = test_data), baseline_prediction = mean(train_data$position))
+                mutate(predicted_position = predict(model, newdata = test_data), baseline_prediction = mean(train_data$position), error = position - predicted_position)
 
 mae <- mean(abs(test_data$position - test_data$predicted_position))
 
@@ -87,6 +87,18 @@ rmse <- sqrt(mean((test_data$position - test_data$predicted_position)^2))
 baseline_mae <- mean(abs(test_data$position - test_data$baseline_prediction))
 
 mae_improvement <- ((baseline_mae - mae) / baseline_mae) * 100
+
+real_position_vs_predicted_position <- ggplot(test_data, aes(x = position, y = predicted_position)) +
+                                        geom_abline(slope = 1, intercept = 0) + 
+                                        geom_point()
+
+ggsave("../plots/real_position_vs_predicted_position.png") 
+
+
+errors_distribution <- ggplot(test_data, aes(x = error)) +
+                        geom_histogram()
+
+ggsave("../plots/errors_distribution.png")
 
 print(test_data, width = Inf)
 save(f1_data, file = "../data/01_edu.RData")
