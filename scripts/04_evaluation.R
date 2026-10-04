@@ -10,12 +10,13 @@ test_data <- test_data |>
     ) |>
     arrange(desc(absolute_error))
 
+
 # Linear Regression Evaluation
-mae <- mean(
+linear_regression_mae <- mean(
     abs(test_data$position - test_data$predicted_position)
 )
 
-rmse <- sqrt(
+linear_regression_rmse <- sqrt(
     mean((test_data$position - test_data$predicted_position)^2)
 )
 
@@ -23,7 +24,48 @@ baseline_mae <- mean(
     abs(test_data$position - test_data$baseline_prediction)
 )
 
-mae_improvement <- ((baseline_mae - mae) / baseline_mae) * 100
+baseline_rmse <- sqrt(
+    mean((test_data$position - test_data$baseline_prediction)^2)
+)
+
+mae_improvement <- ((baseline_mae - linear_regression_mae) / baseline_mae) * 100
+
+
+# Decision Tree
+decision_tree_mae <- mean(
+    abs(test_data$position - test_data$tree_prediction)
+)
+
+decision_tree_rmse <- sqrt(
+    mean((test_data$position - test_data$tree_prediction)^2)
+)
+
+
+models = c("Baseline", "Linear Regression", "Decision Tree")
+mae = c(baseline_mae, linear_regression_mae, decision_tree_mae)
+rmse = c(baseline_rmse, linear_regression_rmse, decision_tree_rmse)
+
+models_performance <- tibble(
+    model = models,
+    MAE = mae,
+    RMSE = rmse
+)
+
+write_csv(
+    models_performance,
+    "../results/models_performance.csv"
+)
+
+
+mae_by_status <- test_data |>
+                    group_by(status) |>
+                    summarize(LR_mae = mean(abs(position - predicted_position)), count = n()) |>
+                    arrange(desc(LR_mae))
+
+write_csv(
+    mae_by_status,
+    "../results/mae_by_status.csv"
+)
 
 # Compare predicted and real positions
 predict_vs_real_position <- test_data |>
@@ -78,5 +120,17 @@ ggsave(
     "../plots/tree_errors_distribution.png",
     tree_errors_distribution
 )
+
+
+test_data <- test_data |>
+                mutate(
+                    grid_group = cut(
+                                    grid,
+                                    breaks = c(0, 5, 10, 15, 20),
+                                    labels = c("1-5", "6-10", "11-15", "16-20")
+                                )
+                )
+
+
 
 print(test_data, width = Inf)
