@@ -39,11 +39,21 @@ test_data <- test_data |>
         recent_prediction = predict(recent_model, newdata = test_data)
     )
 
+validation_data <- validation_data |>
+    mutate(
+        predicted_position = predict(model, newdata = validation_data),
+        tree_prediction = predict(tree_model, newdata = validation_data),
+        baseline_prediction = mean(train_data$position),
+        improved_prediction = predict(improved_model, newdata = validation_data),
+        recent_prediction = predict(recent_model, newdata = validation_data)
+    )
+
 
 save(
     model,
     tree_model,
     train_data,
+    validation_data,
     test_data,
     improved_model,
     recent_model,

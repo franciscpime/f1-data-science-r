@@ -1,5 +1,6 @@
 library(tidyverse)
 library(rpart)
+library(car)
 load("../data/model_results.RData")
 
 
@@ -13,11 +14,11 @@ test_data <- test_data |>
 
 # Linear Regression Evaluation
 linear_regression_mae <- mean(
-    abs(test_data$position - test_data$predicted_position)
+    abs(validation_data$position - validation_data$predicted_position)
 )
 
 linear_regression_rmse <- sqrt(
-    mean((test_data$position - test_data$predicted_position)^2)
+    mean((validation_data$position - validation_data$predicted_position)^2)
 )
 
 baseline_mae <- mean(
@@ -179,21 +180,21 @@ write_csv(
 
 
 improved_model_mae <- mean(
-    abs(test_data$position - test_data$improved_prediction)
+    abs(validation_data$position - validation_data$improved_prediction)
 )
 
 
 improved_model_rmse <- sqrt(
-    mean((test_data$position - test_data$improved_prediction)^2)
+    mean((validation_data$position - validation_data$improved_prediction)^2)
 )
 
 
 recent_model_mae <- mean(
-    abs(test_data$position - test_data$recent_prediction)
+    abs(validation_data$position - validation_data$recent_prediction)
 )
 
 recent_model_rmse <- sqrt(
-    mean((test_data$position - test_data$recent_prediction)^2)
+    mean((validation_data$position - validation_data$recent_prediction)^2)
 )
 
 
@@ -214,5 +215,47 @@ prev_vs_rec_avg_position <- cor(
     train_data$prev_avg_position,
     train_data$recent_avg_position
 )
+
+
+original_vif <- vif(model)
+improved_vif <- vif(improved_model)
+recent_vif <- vif(recent_model)
+
+models <- c(rep("Original", 3), rep("Improved", 4), rep("Recent", 3))
+
+variables <- c(
+    names(original_vif),
+    names(improved_vif),
+    names(recent_vif)
+)
+
+vifs <- c(original_vif, improved_vif, recent_vif)
+
+model_vif <- tibble(
+    Models = models,
+    Variables = variables,
+    VIFs = vifs
+)
+
+write_csv(
+    model_vif,
+    "../results/model_vif.csv",
+)
+
+residuals_vs_fitted <- ggplot(
+    validation_data,
+    aes(x = improved_prediction, y = position - improved_prediction),
+) +
+scale_y_continuous(breaks = seq(-11, 19, by = 1)) +
+scale_x_continuous(breaks = seq(0, 17, by = 1)) +
+geom_point() +
+geom_hline(yintercept = 0, linetype = "dashed")
+
+
+ggsave(
+    "../plots/residuals_vs_fitted.png",
+    residuals_vs_fitted
+)
+
 
 print(test_data, width = Inf)

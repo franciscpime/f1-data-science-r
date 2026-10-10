@@ -45,7 +45,11 @@ ggsave(
 )
 
 train_data <- f1_data |>
-    filter(season <= 2024) |>
+    filter(season <= 2023) |>
+    ungroup()
+
+validation_data <- f1_data |>
+    filter(season == 2024)|>
     ungroup()
 
 test_data <- f1_data |>
@@ -55,6 +59,7 @@ test_data <- f1_data |>
 save(
     f1_data,
     train_data,
+    validation_data,
     test_data,
     file = "../data/model_data.RData"
 )
