@@ -67,6 +67,19 @@ write_csv(
     "../results/mae_by_status.csv"
 )
 
+
+mae_by_grid <- test_data |>
+                group_by(grid) |>
+                summarize(LR_mae = mean(abs(position - predicted_position)), count = n()) |>
+                arrange(desc(LR_mae))
+
+
+write_csv(
+    mae_by_grid,
+    "../results/mae_by_grid.csv"
+)
+
+
 # Compare predicted and real positions
 predict_vs_real_position <- test_data |>
     select(driver, position, predicted_position) |>
@@ -132,5 +145,74 @@ test_data <- test_data |>
                 )
 
 
+mae_by_grid_group <- test_data |>
+                        group_by(grid_group) |>
+                        summarize(LR_mae = mean(abs(position - predicted_position)), count = n()) |>
+                        arrange(desc(LR_mae))
+
+write_csv(
+    mae_by_grid_group,
+    "../results/mae_by_grid_group.csv"
+)
+
+
+mae_by_race <- test_data |>
+                    group_by(raceName) |>
+                    summarize(LR_mae = mean(abs(position - predicted_position)), count = n()) |>
+                    arrange(desc(LR_mae))
+
+write_csv(
+    mae_by_race,
+    "../results/mae_by_race.csv"
+)
+
+
+mae_by_driver <- test_data |>
+                    group_by(driver) |>
+                    summarize(LR_mae = mean(abs(position - predicted_position)), count = n()) |>
+                    arrange(desc(LR_mae))
+
+write_csv(
+    mae_by_driver,
+    "../results/mae_by_driver"
+)
+
+
+improved_model_mae <- mean(
+    abs(test_data$position - test_data$improved_prediction)
+)
+
+
+improved_model_rmse <- sqrt(
+    mean((test_data$position - test_data$improved_prediction)^2)
+)
+
+
+recent_model_mae <- mean(
+    abs(test_data$position - test_data$recent_prediction)
+)
+
+recent_model_rmse <- sqrt(
+    mean((test_data$position - test_data$recent_prediction)^2)
+)
+
+
+metrics <- c("MAE", "RMSE")
+original <- c(linear_regression_mae, linear_regression_rmse)
+improved <- c(improved_model_mae, improved_model_rmse)
+recent <- c(recent_model_mae, recent_model_rmse)
+
+comparation_original_vs_improved <- tibble(
+    Metrics = metrics,
+    Original_Model = num(original, digits = 4),
+    Improved_Model = num(improved, digits = 4),
+    Recent_Model = num(recent, digits = 4) 
+)
+
+# 0.94961
+prev_vs_rec_avg_position <- cor(
+    train_data$prev_avg_position,
+    train_data$recent_avg_position
+)
 
 print(test_data, width = Inf)

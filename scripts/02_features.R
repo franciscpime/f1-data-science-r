@@ -1,4 +1,5 @@
 library(tidyverse)
+library(slider)
 
 load("../data/f1_data.RData")
 
@@ -13,7 +14,8 @@ f1_data <- f1_data |>
     arrange(season, round) |>
     mutate(
         prev_avg_position = lag(cummean(position)),
-        prev_avg_points = lag(cummean(points))
+        prev_avg_points = lag(cummean(points)),
+        recent_avg_position = slide_dbl(lag(position), mean, .before = 4, na.rm = TRUE)
     ) |>
     filter(
         !is.na(prev_avg_position),
