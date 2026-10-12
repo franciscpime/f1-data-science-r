@@ -1,6 +1,7 @@
 library(tidyverse)
 library(rpart)
 library(car)
+library(lmtest)
 load("../data/model_results.RData")
 
 
@@ -258,4 +259,66 @@ ggsave(
 )
 
 
+residuals_qq_plot <- ggplot(
+    validation_data,
+    aes(sample = position - improved_prediction)
+) +
+scale_y_continuous(breaks = seq(-12, 29, by = 1)) +
+scale_x_continuous(breaks = seq(-3, 3, by = 1)) +
+stat_qq() +
+stat_qq_line()
+
+ggsave(
+    "../plots/residuals_qq_plot.png",
+    residuals_qq_plot
+)
+
+validation_outliers <- validation_data |>
+                        mutate(
+                            residual = validation_data$position - validation_data$improved_prediction,
+                            abs_residual = abs(residual)
+                            ) |>
+                            arrange(desc(abs_residual)) |>
+                            slice_head(n = 10) |>
+                            select(raceName, driver, grid, position, improved_prediction, residual, abs_residual, status)
+
+
+write_csv(
+    validation_data,
+    "../results/validation_outliers.csv"
+)
+
+
+validation_mae_by_status <- validation_data |>
+                                group_by(status) |>
+                                summarize(mae_by_status = mean(abs(position - improved_prediction)), count = n()) |>
+                                arrange(desc(mae_by_status))
+
+
+write_csv(
+    validation_data,
+    "../results/validation_mae_by_status.csv"
+)
+
+
+bp_test <- bptest(improved_model)
+
+cooks_distance <- cooks.distance(improved_model)
+
+cooks_threshold = 4 / nobs(improved_model)
+
+influential_count <- sum(cooks_distance > cooks_threshold)
+
+influential_observations <- train_data |>
+                                mutate(cooks_distance = cooks_distance) |>
+                                arrange(desc(cooks_distance)) |>
+                                slice_head(n = 10) |>
+                                select(season, raceName, driver, grid, position, status, cooks_distance)
+
+write_csv(
+    influential_observations,
+    "../results/influential_observations.csv"
+)
+
+crPlots(improved_model)
 print(test_data, width = Inf)

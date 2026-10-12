@@ -1,0 +1,11 @@
+season,raceName,driver,grid,position,status,cooks_distance
+2021,British Grand Prix,Max Verstappen,1,20,Collision,0.026175222624339904
+2022,Spanish Grand Prix,Charles Leclerc,1,20,Turbo,0.018374734360953108
+2022,Saudi Arabian Grand Prix,Max Verstappen,4,1,Finished,0.018064643787176832
+2021,Azerbaijan Grand Prix,Max Verstappen,3,18,Accident,0.017557809387066532
+2021,Italian Grand Prix,Max Verstappen,1,18,Collision,0.014053423162955336
+2022,Canadian Grand Prix,Sergio Pérez,13,20,Gearbox,0.013421019552752652
+2023,Las Vegas Grand Prix,Lando Norris,15,20,Retired,0.012707161869596747
+2023,Monaco Grand Prix,Sergio Pérez,20,16,Lapped,0.012121286959120677
+2023,Mexico City Grand Prix,Sergio Pérez,5,20,Collision damage,0.012019881092102041
+2022,Azerbaijan Grand Prix,Charles Leclerc,1,19,Power Unit,0.012019250819996745
