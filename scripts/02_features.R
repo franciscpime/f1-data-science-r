@@ -15,7 +15,9 @@ f1_data <- f1_data |>
     mutate(
         prev_avg_position = lag(cummean(position)),
         prev_avg_points = lag(cummean(points)),
-        recent_avg_position = slide_dbl(lag(position), mean, .before = 4, na.rm = TRUE)
+        recent_avg_position = slide_dbl(lag(position), mean, .before = 4, na.rm = TRUE),
+        recent_avg_points = slide_dbl(lag(points), mean, .before = 4, na.rm = TRUE)
+
     ) |>
     filter(
         !is.na(prev_avg_position),
@@ -26,7 +28,8 @@ prev_avg_position_vs_position <- ggplot(
     f1_data,
     aes(x = prev_avg_position, y = position)
 ) +
-    geom_col()
+    geom_col() +
+    labs(title = "Prev. Avg. Position vs Position")
 
 ggsave(
     "../plots/prev_avg_position_vs_position.png",

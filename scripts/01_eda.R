@@ -18,7 +18,8 @@ write_csv(
 )
 
 position_distribution <- ggplot(f1_data, aes(x = position)) +
-    geom_bar()
+    geom_bar() +
+    labs(title = "Position Distribution")
 
 ggsave(
     "../plots/position_distribution.png",
@@ -26,7 +27,8 @@ ggsave(
 )
 
 grid_vs_position <- ggplot(f1_data, aes(x = grid, y = position)) +
-    geom_col()
+    geom_col() +
+    labs(title = "Grid vs Position")
 
 ggsave(
     "../plots/grid_vs_position.png",

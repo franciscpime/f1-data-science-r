@@ -5,7 +5,7 @@ library(lmtest)
 load("../data/model_results.RData")
 
 
-test_data <- test_data |>
+validation_data <- validation_data |>
     mutate(
         error = position - predicted_position,
         absolute_error = abs(error)
@@ -23,11 +23,11 @@ linear_regression_rmse <- sqrt(
 )
 
 baseline_mae <- mean(
-    abs(test_data$position - test_data$baseline_prediction)
+    abs(validation_data$position - validation_data$baseline_prediction)
 )
 
 baseline_rmse <- sqrt(
-    mean((test_data$position - test_data$baseline_prediction)^2)
+    mean((validation_data$position - validation_data$baseline_prediction)^2)
 )
 
 mae_improvement <- ((baseline_mae - linear_regression_mae) / baseline_mae) * 100
@@ -35,11 +35,11 @@ mae_improvement <- ((baseline_mae - linear_regression_mae) / baseline_mae) * 100
 
 # Decision Tree
 decision_tree_mae <- mean(
-    abs(test_data$position - test_data$tree_prediction)
+    abs(validation_data$position - validation_data$tree_prediction)
 )
 
 decision_tree_rmse <- sqrt(
-    mean((test_data$position - test_data$tree_prediction)^2)
+    mean((validation_data$position - validation_data$tree_prediction)^2)
 )
 
 
@@ -59,7 +59,7 @@ write_csv(
 )
 
 
-mae_by_status <- test_data |>
+mae_by_status <- validation_data |>
                     group_by(status) |>
                     summarize(LR_mae = mean(abs(position - predicted_position)), count = n()) |>
                     arrange(desc(LR_mae))
@@ -70,7 +70,7 @@ write_csv(
 )
 
 
-mae_by_grid <- test_data |>
+mae_by_grid <- validation_data |>
                 group_by(grid) |>
                 summarize(LR_mae = mean(abs(position - predicted_position)), count = n()) |>
                 arrange(desc(LR_mae))
@@ -83,14 +83,14 @@ write_csv(
 
 
 # Compare predicted and real positions
-predict_vs_real_position <- test_data |>
+predict_vs_real_position <- validation_data |>
     select(driver, position, predicted_position) |>
     arrange(position)
 
 
 # Real position vs predicted position
 real_position_vs_predicted_position <- ggplot(
-    test_data,
+    validation_data,
     aes(x = position, y = predicted_position)
 ) +
     geom_abline(slope = 1, intercept = 0) +
@@ -103,7 +103,7 @@ ggsave(
 
 
 # Linear Regression error distribution
-errors_distribution <- ggplot(test_data, aes(x = error)) +
+errors_distribution <- ggplot(validation_data, aes(x = error)) +
     geom_histogram()
 
 ggsave(
@@ -112,9 +112,8 @@ ggsave(
 )
 
 
-
 # Model comparison
-models_comparison <- ggplot(test_data, aes(x = position)) +
+models_comparison <- ggplot(validation_data, aes(x = position)) +
     geom_col(aes(y = predicted_position)) +
     geom_col(aes(y = tree_prediction))
 
@@ -126,7 +125,7 @@ ggsave(
 
 # Decision Tree error distribution
 tree_errors_distribution <- ggplot(
-    test_data,
+    validation_data,
     aes(x = position - tree_prediction)
 ) +
     geom_histogram()
@@ -137,7 +136,7 @@ ggsave(
 )
 
 
-test_data <- test_data |>
+validation_data <- validation_data |>
                 mutate(
                     grid_group = cut(
                                     grid,
@@ -147,7 +146,7 @@ test_data <- test_data |>
                 )
 
 
-mae_by_grid_group <- test_data |>
+mae_by_grid_group <- validation_data |>
                         group_by(grid_group) |>
                         summarize(LR_mae = mean(abs(position - predicted_position)), count = n()) |>
                         arrange(desc(LR_mae))
@@ -158,7 +157,7 @@ write_csv(
 )
 
 
-mae_by_race <- test_data |>
+mae_by_race <- validation_data |>
                     group_by(raceName) |>
                     summarize(LR_mae = mean(abs(position - predicted_position)), count = n()) |>
                     arrange(desc(LR_mae))
@@ -169,14 +168,14 @@ write_csv(
 )
 
 
-mae_by_driver <- test_data |>
+mae_by_driver <- validation_data |>
                     group_by(driver) |>
                     summarize(LR_mae = mean(abs(position - predicted_position)), count = n()) |>
                     arrange(desc(LR_mae))
 
 write_csv(
     mae_by_driver,
-    "../results/mae_by_driver"
+    "../results/mae_by_driver.csv"
 )
 
 
@@ -199,17 +198,56 @@ recent_model_rmse <- sqrt(
 )
 
 
+recent_points_mae <- mean(
+    abs(validation_data$position - validation_data$recent_points_prediction)
+)
+
+recent_points_rmse <- sqrt(
+    mean((validation_data$position - validation_data$recent_points_prediction)^2)
+)
+
+
+both_recent_mae <- mean(
+    abs(validation_data$position - validation_data$both_recent_prediction)
+)
+
+both_recent_rmse <- sqrt(
+    mean((validation_data$position - validation_data$both_recent_prediction)^2)
+)
+
+
+log_recent_points_mae <- mean(
+    abs(validation_data$position - validation_data$log_recent_points_prediction)
+)
+
+log_recent_points_rmse <- sqrt(
+    mean((validation_data$position - validation_data$log_recent_points_prediction)^2)
+)
+
 metrics <- c("MAE", "RMSE")
 original <- c(linear_regression_mae, linear_regression_rmse)
 improved <- c(improved_model_mae, improved_model_rmse)
 recent <- c(recent_model_mae, recent_model_rmse)
+recent_points <- c(recent_points_mae, recent_points_rmse)
+both_recent <- c(both_recent_mae, both_recent_rmse)
+log_recent_points <- c(log_recent_points_mae, log_recent_points_rmse)
 
 comparation_original_vs_improved <- tibble(
     Metrics = metrics,
     Original_Model = num(original, digits = 4),
     Improved_Model = num(improved, digits = 4),
-    Recent_Model = num(recent, digits = 4) 
+    Recent_Model = num(recent, digits = 4),
+    Recent_Points_Model = num(recent_points, digits = 4),
+    Both_Recent_Model = num(both_recent, digits = 4),
+    Log_Recent_Points_Model = num(log_recent_points, digits = 4)
 )
+
+
+write_csv(
+    comparation_original_vs_improved,
+    "../results/models_comparison_validation.csv"
+)
+
 
 # 0.94961
 prev_vs_rec_avg_position <- cor(
@@ -221,6 +259,7 @@ prev_vs_rec_avg_position <- cor(
 original_vif <- vif(model)
 improved_vif <- vif(improved_model)
 recent_vif <- vif(recent_model)
+recent_points_vif <- vif(recent_points_model)
 
 models <- c(rep("Original", 3), rep("Improved", 4), rep("Recent", 3))
 
@@ -284,7 +323,7 @@ validation_outliers <- validation_data |>
 
 
 write_csv(
-    validation_data,
+    validation_outliers,
     "../results/validation_outliers.csv"
 )
 
@@ -296,12 +335,13 @@ validation_mae_by_status <- validation_data |>
 
 
 write_csv(
-    validation_data,
+    validation_mae_by_status,
     "../results/validation_mae_by_status.csv"
 )
 
 
 bp_test <- bptest(improved_model)
+recent_points_bp_test <- bptest(recent_points_model)
 
 cooks_distance <- cooks.distance(improved_model)
 
@@ -320,5 +360,6 @@ write_csv(
     "../results/influential_observations.csv"
 )
 
-crPlots(improved_model)
-print(test_data, width = Inf)
+# crPlots(improved_model)
+crPlots(recent_points_model)
+print(validation_data, width = Inf)
