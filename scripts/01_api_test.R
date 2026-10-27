@@ -25,13 +25,6 @@ all_races <- unlist(all_races, recursive = FALSE)
 api_data <- test
 api_data$MRData$RaceTable$Races <- all_races
 
-
-
-
-# url <- "https://api.jolpi.ca/ergast/f1/2025/1/results/"
-
-# api_data <- fromJSON(url, simplifyVector = FALSE)
-
 write_json(
     api_data,
     "../data/2025_results_full.json",
