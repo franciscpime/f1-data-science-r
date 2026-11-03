@@ -8,11 +8,19 @@ f1_data$points <- as.integer(f1_data$points)
 f1_data$grid <- as.integer(f1_data$grid)
 f1_data$laps <- as.integer(f1_data$laps)
 
-# Calculate the correlation between starting and finishing
-# positions for each season
+# Calculate the correlation between starting and finishing positions for each season
+# Values go from -1 to 1:
+#   >> -1: the driver ended up in a completely different position from where it started
+#   >> 1: the driver ended up in a position close to or the same as where it started 
 correlation_by_season <- f1_data |>
     group_by(season) |>
-    summarise(correlation = cor(grid, position))
+    summarise(correlation = cor(grid, position)) |>
+    mutate(
+        meaning = case_when(
+            correlation >= 0 & correlation < 0.6 ~ "Moderately positive",
+            correlation >= 0.6 ~ "Strongly positive"
+        )
+    )
 
 write_csv(
     correlation_by_season,
