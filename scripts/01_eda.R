@@ -27,6 +27,7 @@ write_csv(
     "../results/correlations_by_season.csv"
 )
 
+
 # Visualise the frequency of each finishing position
 position_distribution <- ggplot(
     f1_data,
@@ -86,6 +87,7 @@ ggsave(
 )
 
 # Calculate average finishing position for each driver
+# The lower the average value, the better the driver's average position
 pilots_performance <- f1_data |>
     group_by(driver) |>
     summarize(average = mean(position, na.rm = TRUE)) |>
