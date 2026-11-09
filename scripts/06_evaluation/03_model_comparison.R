@@ -1,3 +1,5 @@
+load("../../data/processed/random_forest_results.RData")
+
 # Initial Model Performance Comparison
 # Compare baseline, original linear regression and decision tree
 models <- c("Baseline", "Linear Regression", "Decision Tree")
@@ -26,56 +28,50 @@ write_csv(
 )
 # Linear Regression Model Comparison
 # Collect MAE and RMSE for all linear regression variants
-metrics <- c(
-    "MAE",
-    "RMSE"
-)
-
-original <- c(
+mae <- c(
     linear_regression_mae,
-    linear_regression_rmse
-)
-
-improved <- c(
     improved_model_mae,
-    improved_model_rmse
-)
-
-recent <- c(
     recent_model_mae,
-    recent_model_rmse
-)
-
-recent_points <- c(
     recent_points_mae,
-    recent_points_rmse
-)
-
-both_recent <- c(
     both_recent_mae,
-    both_recent_rmse
+    log_recent_points_mae,
+    random_forest_mae
 )
 
-log_recent_points <- c(
-    log_recent_points_mae,
-    log_recent_points_rmse
+rmse <- c(
+    linear_regression_rmse,
+    improved_model_rmse,
+    recent_model_rmse,
+    recent_points_rmse,
+    both_recent_rmse,
+    log_recent_points_rmse,
+    random_forest_rmse
 )
 
 # Create a comparison table
-comparation_original_vs_improved <- tibble(
-    Metrics = metrics,
-    Original_Model = num(original, digits = 4),
-    Improved_Model = num(improved, digits = 4),
-    Recent_Model = num(recent, digits = 4),
-    Recent_Points_Model = num(recent_points, digits = 4),
-    Both_Recent_Model = num(both_recent, digits = 4),
-    Log_Recent_Points_Model = num(log_recent_points, digits = 4)
-)
+comparation_models <- tibble(
+    Model = c(
+        "Original", 
+        "Improved", 
+        "Recent_Model", 
+        "Recent_Points", 
+        "Both", 
+        "Log",
+        "Random Forest"
+    ),
+    MAE = num(mae, digits=4),
+    RMSE = num(rmse, digits=4)
+) |> arrange(MAE)
 
 # Export model comparison results
 write_csv(
-    comparation_original_vs_improved,
+    comparation_models,
     "../../results/models_comparison_validation.csv"
+)
+
+save(
+    comparation_models,
+    file="../../data/processed/model_comparison.RData"
 )
 
 # Actual vs Predicted Finishing Positions
