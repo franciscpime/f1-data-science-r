@@ -1,6 +1,6 @@
 library(tidyverse)
 library(rpart)
-load("../data/processed/model_data.RData")
+load("../../data/processed/model_data.RData")
 
 
 # Predict finishing position using starting grid and
@@ -97,5 +97,5 @@ save(
     recent_points_model,
     both_recent_model,
     log_recent_points_model,
-    file = "../data/processed/model_results.RData"
+    file = "../../data/processed/model_results.RData"
 )

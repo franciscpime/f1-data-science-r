@@ -1,6 +1,6 @@
 library(shiny)
 library(bslib)
-source("../scripts/01_eda.R")
+source("../scripts/03_exploratory_analysis/01_eda.R", chdir = TRUE)
 
 theme <- bs_theme(
     version=5,

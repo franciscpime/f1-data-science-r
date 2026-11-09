@@ -2,12 +2,12 @@ library(jsonlite)
 library(tidyverse)
 
 # Load historical race results from JSON
-json_2021 <- fromJSON("../data/raw/2021_results_full.json")
+json_2025 <- fromJSON("../../data/raw/2025_results_full.json")
 
 # Extract season and race information
-season <- json_2021[["MRData"]][["RaceTable"]][["season"]]
-round <- json_2021[["MRData"]][["RaceTable"]][["Races"]][["round"]]
-raceName <- json_2021[["MRData"]][["RaceTable"]][["Races"]][["raceName"]]
+season <- json_2025[["MRData"]][["RaceTable"]][["season"]]
+round <- json_2025[["MRData"]][["RaceTable"]][["Races"]][["round"]]
+raceName <- json_2025[["MRData"]][["RaceTable"]][["Races"]][["raceName"]]
 
 # Create a list to store data from each race
 round_data <- list()
@@ -15,7 +15,7 @@ round_data <- list()
 # Extract driver results for every race
 for (i in seq_along(round)) {
 
-    results <- json_2021[["MRData"]][["RaceTable"]][["Races"]][["Results"]][[i]]
+    results <- json_2025[["MRData"]][["RaceTable"]][["Races"]][["Results"]][[i]]
 
     # Driver information
     drivers_first_name <- results[["Driver"]][["givenName"]]
@@ -52,7 +52,7 @@ for (i in seq_along(round)) {
 }
 
 # Combine all races into one dataset
-data_2021 <- bind_rows(round_data)
+data_2025 <- bind_rows(round_data)
 
-save(data_2021, file = "../data/processed/data_2021.RData")
-print(data_2021, width = Inf)
+save(data_2025, file = "../../data/processed/data_2025.RData")
+print(data_2025, width = Inf)

@@ -1,6 +1,6 @@
 library(tidyverse)
 
-load("../data/processed/f1_data.RData")
+load("../../data/processed/f1_data.RData")
 
 f1_data$round <- as.integer(f1_data$round)
 f1_data$position <- as.integer(f1_data$position)
@@ -24,7 +24,7 @@ correlation_by_season <- f1_data |>
 
 write_csv(
     correlation_by_season,
-    "../results/correlations_by_season.csv"
+    "../../results/correlations_by_season.csv"
 )
 
 
@@ -52,7 +52,7 @@ position_distribution <- ggplot(
     )
 
 ggsave(
-    "../plots/position_distribution.png",
+    "../../plots/position_distribution.png",
     position_distribution,
     width = 10,
     height = 5,
@@ -65,7 +65,7 @@ grid_vs_position <- ggplot(f1_data, aes(x = grid, y = position)) +
     labs(title = "Grid vs Position")
 
 ggsave(
-    "../plots/grid_vs_position.png",
+    "../../plots/grid_vs_position.png",
     grid_vs_position
 )
 
@@ -82,7 +82,7 @@ grid_vs_position_season <- ggplot(f1_data, aes(x = grid, y = position)) +
     )
 
 ggsave(
-    "../plots/grid_vs_position_season.png",
+    "../../plots/grid_vs_position_season.png",
     grid_vs_position_season
 )
 
@@ -95,7 +95,7 @@ pilots_performance <- f1_data |>
 
 write_csv(
     pilots_performance,
-    "../results/pilots_performance.csv"
+    "../../results/pilots_performance.csv"
 )
 
 # Calculate average finishing position for each constructor
@@ -106,5 +106,5 @@ teams_performance <- f1_data |>
 
 write_csv(
     teams_performance,
-    "../results/teams_performance.csv"
+    "../../results/teams_performance.csv"
 )

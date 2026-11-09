@@ -1,7 +1,7 @@
 library(tidyverse)
 library(slider)
 
-load("../data/processed/f1_data.RData")
+load("../../data/processed/f1_data.RData")
 
 f1_data$round <- as.integer(f1_data$round)
 f1_data$position <- as.integer(f1_data$position)
@@ -56,7 +56,7 @@ prev_avg_position_vs_position <- ggplot(
     theme_minimal()
 
 ggsave(
-    "../plots/prev_avg_position_vs_position.png",
+    "../../plots/prev_avg_position_vs_position.png",
     prev_avg_position_vs_position
 )
 
@@ -77,7 +77,7 @@ prev_avg_points_vs_position <- ggplot(
     theme_minimal()
 
 ggsave(
-    "../plots/prev_avg_points_vs_position.png",
+    "../../plots/prev_avg_points_vs_position.png",
     prev_avg_points_vs_position
 )
 
@@ -101,5 +101,5 @@ save(
     train_data,
     validation_data,
     test_data,
-    file = "../data/processed/model_data.RData"
+    file = "../../data/processed/model_data.RData"
 )

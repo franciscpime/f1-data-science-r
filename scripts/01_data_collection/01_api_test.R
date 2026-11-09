@@ -27,7 +27,7 @@ api_data$MRData$RaceTable$Races <- all_races
 
 write_json(
     api_data,
-    "../data/raw/2025_results_full.json",
+    "../../data/raw/2025_results_full.json",
     pretty = TRUE,
     auto_unbox = TRUE
 )
