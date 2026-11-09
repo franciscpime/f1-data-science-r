@@ -3,7 +3,7 @@ library(rpart)
 library(car)
 library(lmtest)
 
-load("../data/model_results.RData")
+load("../data/processed/model_results.RData")
 
 # Calculate prediction errors for the 2024 validation dataset
 validation_data <- validation_data |>

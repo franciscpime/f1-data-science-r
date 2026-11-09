@@ -1,6 +1,6 @@
 library(tidyverse)
 
-load("../data/f1_data.RData")
+load("../data/processed/f1_data.RData")
 
 f1_data$round <- as.integer(f1_data$round)
 f1_data$position <- as.integer(f1_data$position)

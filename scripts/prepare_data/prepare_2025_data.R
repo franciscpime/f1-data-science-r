@@ -2,7 +2,7 @@ library(jsonlite)
 library(tidyverse)
 
 # Load historical race results from JSON
-json_2025 <- fromJSON("../data/2025_results_full.json")
+json_2025 <- fromJSON("../data/raw/2025_results_full.json")
 
 # Extract season and race information
 season <- json_2025[["MRData"]][["RaceTable"]][["season"]]
@@ -54,5 +54,5 @@ for (i in seq_along(round)) {
 # Combine all races into one dataset
 data_2025 <- bind_rows(round_data)
 
-save(data_2025, file = "../data/data_2025.RData")
+save(data_2025, file = "../data/processed/data_2025.RData")
 print(data_2025, width = Inf)

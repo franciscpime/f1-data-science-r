@@ -5,7 +5,7 @@ api_data <- fromJSON(url, simplifyVector = FALSE)
 
 write_json(
   api_data,
-  "../data/2025_results.json",
+  "../data/raw/2025_results.json",
   pretty = TRUE,
   auto_unbox = TRUE
 )
