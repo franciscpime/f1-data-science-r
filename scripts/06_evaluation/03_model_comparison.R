@@ -1,17 +1,10 @@
 load("../../data/processed/random_forest_results.RData")
 
-####################################################################
-#                   MODEL PERFORMANCE COMPARISON                   #
-# Create a single table:                                           #
-#   >> contains the performance of all models                      #
-#   >> each row = one model evaluated on a specific dataset        #
-#   >> 2024 = Validation (9 models)                                #
-#   >> 2025 = Test (2 final models)                                #
-#   >> MAE = average prediction error                              #
-#   >> RMSE = similar to MAE, but punishes bigger errors more      #
-#   >> lower MAE/RMSE = better predictions                         #
-#   >> model names, MAE and RMSE must follow the same order        #
-####################################################################
+#################################################################
+#                  MODEL PERFORMANCE COMPARISON                 #
+# Compares the accuracy of all models using MAE and RMSE,       #
+# with 2024 for validation and 2025 for final testing.          #
+#################################################################
 
 model_performance <- tibble(
     Year = c(rep(2024L, 9), rep(2025L, 2)),
@@ -67,18 +60,11 @@ save(
     file = "../../data/processed/model_performance.RData"
 )
 
-###########################################################################
-#                   PREPARE PREDICTIONS FOR THE GRAPHS                    #
-# Prepare the 2024 predictions:                                           #
-#   >> select the actual positions and predictions from 4 models          #
-#   >> pivot_longer() puts all predictions into one column                #
-#   >> Model: which model made the prediction                             #
-#   >> Predicted: the position predicted by that model                    #
-#   >> recode() replaces the column names with cleaner model names        #
-#   >> Error = Actual Position - Predicted Position                       #
-#       >>> positive error: driver finished worse than predicted          #
-#       >>> negative error: driver finished better than predicted         #
-###########################################################################
+#################################################################
+#                PREPARE PREDICTIONS FOR GRAPHS                 #
+# Organises the actual and predicted finishing positions from   #
+# four models into one table for easier visual comparison.      #
+#################################################################
 
 model_predictions_2024 <- validation_data |>
     select(
@@ -105,18 +91,11 @@ model_predictions_2024 <- validation_data |>
     )
 
 
-# ============================================================
-# ACTUAL VS PREDICTED FINISHING POSITIONS
-# ============================================================
-
-# Compare actual positions with predicted positions:
-#   >> X-axis = actual finishing position
-#   >> Y-axis = predicted finishing position
-#   >> each dot = one prediction
-#   >> red dashed line = perfect prediction
-#   >> closer to the line = more accurate prediction
-#   >> facet_wrap() creates one panel for each model
-#   >> coord_equal() keeps the X and Y scales equal
+#################################################################
+#               ACTUAL VS PREDICTED POSITIONS                   #
+# Compares predicted and actual finishing positions to show     #
+# how closely each model's predictions match real results.      #
+#################################################################
 
 models_actual_vs_predicted_2024_graph <- ggplot(
     model_predictions_2024,
@@ -152,18 +131,11 @@ ggsave(
 )
 
 
-##############################################################################
-#                       PREDICTION ERROR DISTRIBUTIONS                       #
-# Compare how prediction errors are distributed:                             #
-#   >> X-axis = prediction error (actual - predicted)                        #
-#   >> Y-axis = number of predictions                                        #
-#       >>> error = 0: perfect prediction                                    #
-#       >>> errors closer to 0: better predictions                           #
-#       >>> bigger absolute errors: bigger mistakes                          #
-#   >> red dashed line: zero error                                           #
-#   >> facet_wrap() lets us compare all 4 models in one figure               #
-#   >> useful for spotting models that make more large mistakes              #
-##############################################################################
+#################################################################
+#                 PREDICTION ERROR DISTRIBUTIONS               #
+# Shows how prediction errors are distributed across models,   #
+# helping identify which models make more large mistakes.      #
+#################################################################
 
 models_error_distribution_2024_graph <- ggplot(
     model_predictions_2024,

@@ -1,13 +1,8 @@
-#####################################################################
-#              FEATURE CORRELATION AND MULTICOLLINEARITY            #
-# Check if some features contain very similar information:          #
-#   >> correlation measures how strongly two features are related   #
-#   >> values close to 1: strong positive relationship              #
-#   >> VIF checks multicollinearity in Linear Regression models     #
-#       >>> high VIF: a feature overlaps with other features        #
-#       >>> lower VIF: less multicollinearity                       #
-#   >> compare VIF values across 4 different regression models      #
-#####################################################################
+#################################################################
+#             FEATURE CORRELATION AND MULTICOLLINEARITY         #
+# Checks whether some features contain similar information and  #
+# uses VIF to identify possible multicollinearity problems.     #
+#################################################################
 
 historical_recent_position_correlation <- cor(
     train_data$prev_avg_position,
@@ -55,17 +50,12 @@ write_csv(
 )
 
 
-#####################################################################
-#                   RESIDUALS VS PREDICTED POSITIONS                #
-# Check how prediction errors behave across different models:       #
-#   >> X-axis = predicted finishing position                        #
-#   >> Y-axis = prediction error (actual - predicted)               #
-#       >>> each dot = one prediction                               #
-#   >> red dashed line = zero error                                 #
-#   >> points randomly spread around zero = a better pattern        #
-#   >> clear curves or patterns may suggest model problems          #
-#   >> facet_wrap() compares 3 models in one figure                 #
-#####################################################################
+#################################################################
+#                RESIDUALS VS PREDICTED POSITIONS               #
+# Shows how prediction errors change across predicted finishing #
+# positions, helping identify patterns or possible model issues.#
+#################################################################
+
 
 linear_models_residuals_2024_graph <- prediction_errors |>
     filter(
@@ -104,15 +94,11 @@ ggsave(
 )
 
 
-#####################################################################
-#                         Q-Q PLOT ANALYSIS                         #
-# Check if prediction errors follow a normal distribution:          #
-#   >> each dot compares observed and expected error quantiles      #
-#   >> red line = what a normal distribution would look like        #
-#   >> dots close to the line = errors are closer to normal         #
-#   >> large deviations = errors may not be normally distributed    #
-#   >> facet_wrap() compares the 3 regression models                #
-#####################################################################
+###################################################################
+#                        Q-Q PLOT ANALYSIS                        #
+# Compares prediction errors with a normal distribution to see    #
+# whether they follow a similar pattern or show large deviations. #
+###################################################################
 
 linear_models_qq_2024_graph <- prediction_errors |>
     filter(
@@ -151,30 +137,23 @@ ggsave(
 )
 
 
-#####################################################################
-#                       HETEROSCEDASTICITY TESTS                    #
-# Check if the size of the residuals changes across predictions:    #
-#   >> Breusch-Pagan test checks for non-constant error variance    #
-#   >> p-value < 0.05 = evidence of heteroscedasticity              #
-#   >> p-value >= 0.05 = not enough evidence of heteroscedasticity  #
-#   >> tests use training residuals, not validation predictions     #
-#####################################################################
+#################################################################
+#                     HETEROSCEDASTICITY TESTS                  #
+# Uses the Breusch-Pagan test to check whether the variance of  #
+# training residuals stays constant or changes across values.   #
+#################################################################
 
 improved_LR_bp_test <- bptest(improved_model)
 
 recent_points_LR_bp_test <- bptest(recent_points_model)
 
 
-#####################################################################
-#                    INFLUENTIAL OBSERVATIONS                       #
-# Find training observations that strongly affect the model:        #
-#   >> Cook's distance measures how influential each row is         #
-#   >> threshold = 4 / number of training observations              #
-#   >> values > threshold are flagged for investigation             #
-#   >> count how many observations exceed the threshold             #
-#   >> save the 10 observations with the highest Cook's distance    #
-#   >> influential does not automatically mean incorrect            #
-#####################################################################
+#################################################################
+#                    INFLUENTIAL OBSERVATIONS                   #
+# Uses Cook's distance to identify training observations that   #
+# may have a strong influence on the regression model.          #
+#################################################################
+
 
 improved_LR_cooks_distance <- cooks.distance(improved_model)
 
@@ -206,17 +185,11 @@ write_csv(
 )
 
 
-#####################################################################
-#                       ERRORS BY RACE STATUS                       #
-# Compare prediction accuracy across different race outcomes:       #
-#   >> Finished = drivers who completed the race normally           #
-#   >> Retired = drivers who did not finish                         #
-#   >> MAE = average absolute prediction error for each status      #
-#   >> higher bars = larger average prediction mistakes             #
-#   >> different colours = different prediction models              #
-#   >> facet_wrap() separates 2024 Validation and 2025 Test         #
-#   >> useful for checking how incidents affect prediction accuracy #
-#####################################################################
+#################################################################
+#                       ERRORS BY RACE STATUS                   #
+# Compares prediction errors for different race outcomes, such  #
+# as finishing normally, retiring, or being disqualified.       #
+#################################################################
 
 models_errors_by_status_2024_2025_graph <- errors_by_status |>
     ggplot(
