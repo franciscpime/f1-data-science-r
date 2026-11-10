@@ -1,190 +1,205 @@
-# Original Linear Regression: Error by Race Status
-# Calculate MAE for each race completion status
-mae_by_status <- validation_data |>
-    group_by(status) |>
-    summarize(
-        LR_mae = mean(abs(position - predicted_position)),
-        count = n()
-    ) |>
-    arrange(desc(LR_mae))
+# Create a unified table of individual prediction errors
+# Each row represents one prediction for one driver and race
+prediction_errors <- bind_rows(
+    # 2024 Original Linear Regression
+    validation_data |>
+        transmute(
+            Year = 2024L,
+            Dataset = "Validation",
+            Model = "Original LR",
+            Driver = driver,
+            Race = raceName,
+            Grid = grid,
+            Status = status,
+            Actual = position,
+            Predicted = predicted_position
+        ),
 
-write_csv(
-    mae_by_status,
-    "../../results/mae_by_status.csv"
-)
+    # 2024 Improved Linear Regression
+    validation_data |>
+        transmute(
+            Year = 2024L,
+            Dataset = "Validation",
+            Model = "Improved LR",
+            Driver = driver,
+            Race = raceName,
+            Grid = grid,
+            Status = status,
+            Actual = position,
+            Predicted = improved_prediction
+        ),
 
-# Original Linear Regression: Error by Starting Grid
-# Calculate MAE for each starting grid position
-mae_by_grid <- validation_data |>
-    group_by(grid) |>
-    summarize(
-        LR_mae = mean(abs(position - predicted_position)),
-        count = n()
-    ) |>
-    arrange(desc(LR_mae))
+    # 2024 Recent Points Linear Regression
+    validation_data |>
+        transmute(
+            Year = 2024L,
+            Dataset = "Validation",
+            Model = "Recent Points LR",
+            Driver = driver,
+            Race = raceName,
+            Grid = grid,
+            Status = status,
+            Actual = position,
+            Predicted = recent_points_prediction
+        ),
 
-write_csv(
-    mae_by_grid,
-    "../../results/mae_by_grid.csv"
-)
+    # 2025 Recent Points Linear Regression
+    test_data |>
+        transmute(
+            Year = 2025L,
+            Dataset = "Test",
+            Model = "Recent Points LR",
+            Driver = driver,
+            Race = raceName,
+            Grid = grid,
+            Status = status,
+            Actual = position,
+            Predicted = recent_points_test_prediction
+        ),
 
-# Original Linear Regression: Error by Grid Group
-# Divide starting grid positions into four groups
-validation_data <- validation_data |>
-    mutate(
-        grid_group = cut(
-            grid,
-            breaks = c(0, 5, 10, 15, 20),
-            labels = c("1-5", "6-10", "11-15", "16-20")
+    # 2025 Random Forest
+    test_data |>
+        transmute(
+            Year = 2025L,
+            Dataset = "Test",
+            Model = "Random Forest",
+            Driver = driver,
+            Race = raceName,
+            Grid = grid,
+            Status = status,
+            Actual = position,
+            Predicted = random_forest_test_prediction
+        )
+
+) |> mutate(
+        Error = Actual - Predicted,
+        Absolute_Error = abs(Error),
+        Grid_Group = cut(
+            Grid,
+            breaks = c(-Inf, 5, 10, 15, Inf),
+            labels = c("1-5", "6-10", "11-15", "16+")
         )
     )
 
-# Calculate MAE within each starting grid group
-mae_by_grid_group <- validation_data |>
-    group_by(grid_group) |>
-    summarize(
-        LR_mae = mean(abs(position - predicted_position)),
-        count = n()
-    ) |>
-    arrange(desc(LR_mae))
-
 write_csv(
-    mae_by_grid_group,
-    "../../results/mae_by_grid_group.csv"
+    prediction_errors,
+    "../../results/prediction_errors.csv"
 )
 
-# Original Linear Regression: Error by Race
-# Calculate MAE for each Grand Prix
-mae_by_race <- validation_data |>
-    group_by(raceName) |>
-    summarize(
-        LR_mae = mean(abs(position - predicted_position)),
-        count = n()
-    ) |>
-    arrange(desc(LR_mae))
-
-write_csv(
-    mae_by_race,
-    "../../results/mae_by_race.csv"
-)
-
-# Original Linear Regression: Error by Driver
-# Calculate MAE for each driver
-mae_by_driver <- validation_data |>
-    group_by(driver) |>
-    summarize(
-        LR_mae = mean(abs(position - predicted_position)),
-        count = n()
-    ) |>
-    arrange(desc(LR_mae))
-
-write_csv(
-    mae_by_driver,
-    "../../results/mae_by_driver.csv"
+save(
+    prediction_errors,
+    file = "../../data/processed/prediction_errors.RData"
 )
 
 
-# 24. Improved Linear Regression: Validation Outliers
-# Identify the ten largest absolute validation residuals
-validation_outliers <- validation_data |>
-    mutate(
-        residual = position - improved_prediction,
-        abs_residual = abs(residual)
-    ) |>
-    arrange(desc(abs_residual)) |>
-    slice_head(n = 10) |>
-    select(
-        raceName,
-        driver,
-        grid,
-        position,
-        improved_prediction,
-        residual,
-        abs_residual,
-        status
-    )
+# Error summary by race completion status
 
-write_csv(
-    validation_outliers,
-    "../../results/validation_outliers.csv"
-)
-
-
-# Improved Linear Regression: Error by Race Status
-# Calculate MAE for each race status
-validation_mae_by_status <- validation_data |>
-    group_by(status) |>
-    summarize(
-        mae_by_status = mean(abs(position - improved_prediction)),
-        count = n()
-    ) |>
-    arrange(desc(mae_by_status))
-
-write_csv(
-    validation_mae_by_status,
-    "../../results/validation_mae_by_status.csv"
-)
-
-# Errors 2024
-validation_errors_2024 <- tibble(
-    Driver = validation_data$driver,
-    Race = validation_data$raceName,
-    Actual = validation_data$position,
-    Linear_Predicted = validation_data$recent_points_prediction,
-    Linear_Error = abs(
-        validation_data$position - 
-        validation_data$recent_points_prediction
-    ),
-    Status = validation_data$status
-) |> arrange(desc(Linear_Error))
-
-write_csv(
-    validation_errors_2024,
-    "../../results/validation_errors_2024.csv"
-)
-
-erros_by_status_2024 <- validation_errors_2024 |>
-    group_by(Status) |>
+errors_by_status <- prediction_errors |>
+    group_by(Year, Dataset, Model, Status) |>
     summarise(
         Count = n(),
-        Linear_MAE = mean(Linear_Error)
-    ) |> arrange(desc(Linear_MAE))
+        MAE = mean(Absolute_Error),
+        .groups = "drop"
+    ) |>
+    arrange(Year, Model, desc(MAE))
 
 
+# Error summary by starting grid position
 
-# Errors 2025
-test_errors_2025 <- tibble(
-    Driver = test_data$driver,
-    Race = test_data$raceName,
-    Actual = test_data$position,
-    Grid = test_data$grid,
-    Linear_Predicted = recent_points_test_prediction,
-    RF_Predicted = random_forest_test_prediction,
-    Linear_Error = abs(test_data$position - recent_points_test_prediction),
-    RF_Error = abs(test_data$position - random_forest_test_prediction),
-    Status = test_data$status
-) |> arrange(desc(Linear_Error))
-
-write_csv(
-    test_errors_2025,
-    "../../results/test_errors_2025.csv"
-)
-
-errors_by_grid <- test_errors_2025 |>
-    
-
-errors_by_status_2025 <- test_errors_2025 |>
-    group_by(Status) |>
+errors_by_grid <- prediction_errors |>
+    group_by(Year, Dataset, Model, Grid) |>
     summarise(
         Count = n(),
-        Linear_MAE = mean(Linear_Error),
-        RF_MAE = mean(RF_Error)
+        MAE = mean(Absolute_Error),
+        .groups = "drop"
     ) |>
-    arrange(desc(Linear_MAE))
+    arrange(Year, Model, Grid)
 
-errors_by_status_long_2025 <- errors_by_status_2025 |>
-    pivot_longer(
-        cols = c(Linear_MAE, RF_MAE),
-        names_to = "Models",
-        values_to = "Errors"
-    )
+
+# Error summary by starting grid group
+
+errors_by_grid_group <- prediction_errors |>
+    group_by(Year, Dataset, Model, Grid_Group) |>
+    summarise(
+        Count = n(),
+        MAE = mean(Absolute_Error),
+        .groups = "drop"
+    ) |>
+    arrange(Year, Model, Grid_Group)
+
+
+# Error summary by race
+
+errors_by_race <- prediction_errors |>
+    group_by(Year, Dataset, Model, Race) |>
+    summarise(
+        Count = n(),
+        MAE = mean(Absolute_Error),
+        .groups = "drop"
+    ) |>
+    arrange(Year, Model, desc(MAE))
+
+
+# Error summary by driver
+
+errors_by_driver <- prediction_errors |>
+    group_by(Year, Dataset, Model, Driver) |>
+    summarise(
+        Count = n(),
+        MAE = mean(Absolute_Error),
+        .groups = "drop"
+    ) |>
+    arrange(Year, Model, desc(MAE))
+
+
+# Ten largest errors for each model and year
+
+prediction_outliers <- prediction_errors |>
+    group_by(Year, Dataset, Model) |>
+    slice_max(
+        order_by = Absolute_Error,
+        n = 10,
+        with_ties = FALSE
+    ) |>
+    ungroup() |>
+    arrange(Year, Model, desc(Absolute_Error))
+
+write_csv(
+    errors_by_status,
+    "../../results/errors_by_status.csv"
+)
+
+write_csv(
+    errors_by_grid,
+    "../../results/errors_by_grid.csv"
+)
+
+write_csv(
+    errors_by_grid_group,
+    "../../results/errors_by_grid_group.csv"
+)
+
+write_csv(
+    errors_by_race,
+    "../../results/errors_by_race.csv"
+)
+
+write_csv(
+    errors_by_driver,
+    "../../results/errors_by_driver.csv"
+)
+
+write_csv(
+    prediction_outliers,
+    "../../results/prediction_outliers.csv"
+)
+
+save(
+    errors_by_status,
+    errors_by_grid,
+    errors_by_grid_group,
+    errors_by_race,
+    errors_by_driver,
+    prediction_outliers,
+    file = "../../data/processed/error_summaries.RData"
+)

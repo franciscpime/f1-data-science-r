@@ -1,0 +1,26 @@
+Year,Dataset,Model,Status,Count,MAE
+2024,Validation,Improved LR,Disqualified,2,9.234165984399983
+2024,Validation,Improved LR,Retired,49,6.790754099277265
+2024,Validation,Improved LR,Did not start,3,6.189111317329535
+2024,Validation,Improved LR,Finished,274,2.55099496341534
+2024,Validation,Improved LR,Lapped,127,2.1347543164632934
+2024,Validation,Original LR,Disqualified,2,9.227406979223826
+2024,Validation,Original LR,Retired,49,6.7921958989548665
+2024,Validation,Original LR,Did not start,3,6.190058245096453
+2024,Validation,Original LR,Finished,274,2.5517057184856244
+2024,Validation,Original LR,Lapped,127,2.1367656449231758
+2024,Validation,Recent Points LR,Disqualified,2,9.607044806520785
+2024,Validation,Recent Points LR,Retired,49,6.783366323488812
+2024,Validation,Recent Points LR,Did not start,3,6.250564359355111
+2024,Validation,Recent Points LR,Finished,274,2.4960101627694797
+2024,Validation,Recent Points LR,Lapped,127,2.1093600314507603
+2025,Test,Random Forest,Disqualified,6,10.44108858142464
+2025,Test,Random Forest,Retired,45,7.4835795742407525
+2025,Test,Random Forest,Did not start,3,6.768643603596664
+2025,Test,Random Forest,Finished,315,2.865207255072542
+2025,Test,Random Forest,Lapped,89,2.807117744864493
+2025,Test,Recent Points LR,Disqualified,6,10.313574628147567
+2025,Test,Recent Points LR,Retired,45,7.327544975768353
+2025,Test,Recent Points LR,Did not start,3,6.186253223933605
+2025,Test,Recent Points LR,Finished,315,2.770971713550282
+2025,Test,Recent Points LR,Lapped,89,2.6915622171822813

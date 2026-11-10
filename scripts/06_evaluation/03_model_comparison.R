@@ -31,21 +31,21 @@ write_csv(
 # Collect MAE and RMSE for all linear regression variants
 mae_2024 <- c(
     linear_regression_mae,
-    improved_model_mae,
-    recent_model_mae,
-    recent_points_mae,
-    both_recent_mae,
-    log_recent_points_mae,
+    improved_linear_model_mae,
+    recent_position_LR_mae,
+    recent_points_LR_mae_2024,
+    both_recent_features_mae,
+    log_recent_points_LR_mae,
     random_forest_mae
 )
 
 rmse_2024 <- c(
     linear_regression_rmse,
-    improved_model_rmse,
-    recent_model_rmse,
-    recent_points_rmse,
-    both_recent_rmse,
-    log_recent_points_rmse,
+    improved_linear_model_rmse,
+    recent_position_LR_rmse,
+    recent_points_LR_rmse_2024,
+    both_recent_features_rmse,
+    log_recent_points_LR_rmse,
     random_forest_rmse
 )
 
@@ -78,12 +78,12 @@ save(
 # Model Comparison: 2025 Validation
 
 mae_2025 <- c(
-    recent_points_test_mae,
+    recent_points_LR_mae_2025,
     random_forest_test_mae
 )
 
 rmse_2025 <- c(
-    recent_points_test_rmse,
+    recent_points_LR_rmse_2025,
     random_forest_test_rmse
 ) 
 

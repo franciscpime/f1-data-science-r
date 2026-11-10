@@ -1,0 +1,112 @@
+Year,Dataset,Model,Driver,Count,MAE
+2024,Validation,Improved LR,George Russell,23,4.028367981102167
+2024,Validation,Improved LR,Lewis Hamilton,23,3.9899615916412237
+2024,Validation,Improved LR,Alexander Albon,23,3.505733153197533
+2024,Validation,Improved LR,Pierre Gasly,23,3.483053580253035
+2024,Validation,Improved LR,Yuki Tsunoda,23,3.2488788743602823
+2024,Validation,Improved LR,Sergio Pérez,23,3.2376847331077716
+2024,Validation,Improved LR,Charles Leclerc,23,3.2322635610861474
+2024,Validation,Improved LR,Lance Stroll,23,3.193840398128097
+2024,Validation,Improved LR,Lando Norris,23,3.058059292778913
+2024,Validation,Improved LR,Nico Hülkenberg,23,3.035191203598108
+2024,Validation,Improved LR,Oscar Piastri,23,2.952696654248575
+2024,Validation,Improved LR,Liam Lawson,5,2.778020937928225
+2024,Validation,Improved LR,Carlos Sainz,22,2.7515536105951295
+2024,Validation,Improved LR,Esteban Ocon,22,2.7393788211690637
+2024,Validation,Improved LR,Kevin Magnussen,21,2.7111888502911112
+2024,Validation,Improved LR,Max Verstappen,23,2.6201837010913334
+2024,Validation,Improved LR,Franco Colapinto,8,2.612679268410241
+2024,Validation,Improved LR,Fernando Alonso,23,2.5849473779549323
+2024,Validation,Improved LR,Logan Sargeant,13,2.3347444618212347
+2024,Validation,Improved LR,Daniel Ricciardo,17,2.116117295875756
+2024,Validation,Improved LR,Guanyu Zhou,23,1.9934735318709695
+2024,Validation,Improved LR,Valtteri Bottas,23,1.9270952061771596
+2024,Validation,Improved LR,Oliver Bearman,2,0.4567176964449118
+2024,Validation,Original LR,George Russell,23,4.029726805803208
+2024,Validation,Original LR,Lewis Hamilton,23,4.000828049337936
+2024,Validation,Original LR,Alexander Albon,23,3.5069330938063454
+2024,Validation,Original LR,Pierre Gasly,23,3.4849825789192126
+2024,Validation,Original LR,Yuki Tsunoda,23,3.253900090504177
+2024,Validation,Original LR,Sergio Pérez,23,3.2375830528827905
+2024,Validation,Original LR,Charles Leclerc,23,3.234934695226986
+2024,Validation,Original LR,Lance Stroll,23,3.1991128872795875
+2024,Validation,Original LR,Lando Norris,23,3.055330705507766
+2024,Validation,Original LR,Nico Hülkenberg,23,3.0299575508404364
+2024,Validation,Original LR,Oscar Piastri,23,2.96157741369411
+2024,Validation,Original LR,Liam Lawson,5,2.776943837904769
+2024,Validation,Original LR,Carlos Sainz,22,2.744576708818576
+2024,Validation,Original LR,Esteban Ocon,22,2.7381914153361393
+2024,Validation,Original LR,Kevin Magnussen,21,2.710203986266398
+2024,Validation,Original LR,Max Verstappen,23,2.6212700403313325
+2024,Validation,Original LR,Franco Colapinto,8,2.6164513430970686
+2024,Validation,Original LR,Fernando Alonso,23,2.5824029703046025
+2024,Validation,Original LR,Logan Sargeant,13,2.333853389152165
+2024,Validation,Original LR,Daniel Ricciardo,17,2.1207299422547394
+2024,Validation,Original LR,Guanyu Zhou,23,1.9955937426764876
+2024,Validation,Original LR,Valtteri Bottas,23,1.9243270090924856
+2024,Validation,Original LR,Oliver Bearman,2,0.4552901377255836
+2024,Validation,Recent Points LR,George Russell,23,3.9230367937357036
+2024,Validation,Recent Points LR,Lewis Hamilton,23,3.662335942068544
+2024,Validation,Recent Points LR,Alexander Albon,23,3.5400310729341027
+2024,Validation,Recent Points LR,Pierre Gasly,23,3.475025734232609
+2024,Validation,Recent Points LR,Sergio Pérez,23,3.2790418106976222
+2024,Validation,Recent Points LR,Yuki Tsunoda,23,3.2324098483450734
+2024,Validation,Recent Points LR,Lance Stroll,23,3.191802543919291
+2024,Validation,Recent Points LR,Charles Leclerc,23,3.1860362997292957
+2024,Validation,Recent Points LR,Lando Norris,23,3.0145771779125483
+2024,Validation,Recent Points LR,Nico Hülkenberg,23,2.9899740635745626
+2024,Validation,Recent Points LR,Liam Lawson,5,2.917448273904364
+2024,Validation,Recent Points LR,Carlos Sainz,22,2.8459899141012905
+2024,Validation,Recent Points LR,Esteban Ocon,22,2.7921039746066567
+2024,Validation,Recent Points LR,Max Verstappen,23,2.747846684281224
+2024,Validation,Recent Points LR,Kevin Magnussen,21,2.6865029553086255
+2024,Validation,Recent Points LR,Oscar Piastri,23,2.6132571190519003
+2024,Validation,Recent Points LR,Fernando Alonso,23,2.5337507416372005
+2024,Validation,Recent Points LR,Franco Colapinto,8,2.490647904413579
+2024,Validation,Recent Points LR,Logan Sargeant,13,2.170950020453183
+2024,Validation,Recent Points LR,Daniel Ricciardo,17,2.123383745009574
+2024,Validation,Recent Points LR,Guanyu Zhou,23,2.03193510828707
+2024,Validation,Recent Points LR,Valtteri Bottas,23,1.853442189561558
+2024,Validation,Recent Points LR,Oliver Bearman,2,0.772871498465542
+2025,Test,Random Forest,Nico Hülkenberg,23,4.6174139166057095
+2025,Test,Random Forest,Andrea Kimi Antonelli,23,4.5744918345264765
+2025,Test,Random Forest,Charles Leclerc,23,4.3085217538377645
+2025,Test,Random Forest,Lando Norris,23,4.0521597871974055
+2025,Test,Random Forest,Lewis Hamilton,23,3.6226098678684817
+2025,Test,Random Forest,Isack Hadjar,23,3.5724272813961475
+2025,Test,Random Forest,Carlos Sainz,23,3.5477034982909625
+2025,Test,Random Forest,Liam Lawson,23,3.493663583771711
+2025,Test,Random Forest,Oscar Piastri,23,3.429411566584541
+2025,Test,Random Forest,Oliver Bearman,23,3.427176235035103
+2025,Test,Random Forest,Fernando Alonso,23,3.425412013341812
+2025,Test,Random Forest,Pierre Gasly,23,3.366692767418495
+2025,Test,Random Forest,Alexander Albon,23,3.3585194511591987
+2025,Test,Random Forest,Lance Stroll,22,3.329214869400351
+2025,Test,Random Forest,Esteban Ocon,23,3.2534958681523363
+2025,Test,Random Forest,Gabriel Bortoleto,23,3.035680329792241
+2025,Test,Random Forest,Max Verstappen,23,3.0236671944848585
+2025,Test,Random Forest,Yuki Tsunoda,23,2.9483802355713737
+2025,Test,Random Forest,George Russell,23,2.2136689110777783
+2025,Test,Random Forest,Franco Colapinto,17,1.9841356107051957
+2025,Test,Random Forest,Jack Doohan,5,1.9758130123162279
+2025,Test,Recent Points LR,Andrea Kimi Antonelli,23,4.477380255254987
+2025,Test,Recent Points LR,Nico Hülkenberg,23,4.455842919832046
+2025,Test,Recent Points LR,Charles Leclerc,23,4.319719484541511
+2025,Test,Recent Points LR,Lewis Hamilton,23,3.9893933346748383
+2025,Test,Recent Points LR,Oliver Bearman,23,3.5239191646780195
+2025,Test,Recent Points LR,Isack Hadjar,23,3.480637594451577
+2025,Test,Recent Points LR,Carlos Sainz,23,3.4702491725540594
+2025,Test,Recent Points LR,Lando Norris,23,3.4111308599984196
+2025,Test,Recent Points LR,Fernando Alonso,23,3.3791116325605026
+2025,Test,Recent Points LR,Liam Lawson,23,3.309211964953195
+2025,Test,Recent Points LR,Pierre Gasly,23,3.264296324056209
+2025,Test,Recent Points LR,Esteban Ocon,23,3.2086078482673206
+2025,Test,Recent Points LR,Lance Stroll,22,3.065212706800152
+2025,Test,Recent Points LR,Alexander Albon,23,3.0302640375767
+2025,Test,Recent Points LR,Yuki Tsunoda,23,2.993313876679764
+2025,Test,Recent Points LR,Gabriel Bortoleto,23,2.9930844205147658
+2025,Test,Recent Points LR,Oscar Piastri,23,2.9286224084555643
+2025,Test,Recent Points LR,Max Verstappen,23,2.7887969221255497
+2025,Test,Recent Points LR,Jack Doohan,5,2.5575374975297684
+2025,Test,Recent Points LR,Franco Colapinto,17,2.156406355034374
+2025,Test,Recent Points LR,George Russell,23,2.093964882085292

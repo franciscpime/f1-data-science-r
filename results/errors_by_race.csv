@@ -1,0 +1,116 @@
+Year,Dataset,Model,Race,Count,MAE
+2024,Validation,Improved LR,Canadian Grand Prix,20,4.454754798350401
+2024,Validation,Improved LR,Australian Grand Prix,19,4.258067790121206
+2024,Validation,Improved LR,Austrian Grand Prix,20,3.7307851227366187
+2024,Validation,Improved LR,Azerbaijan Grand Prix,20,3.7201166651100532
+2024,Validation,Improved LR,British Grand Prix,20,3.6987979122139616
+2024,Validation,Improved LR,Abu Dhabi Grand Prix,19,3.6691636461012354
+2024,Validation,Improved LR,São Paulo Grand Prix,20,3.613508457733529
+2024,Validation,Improved LR,Qatar Grand Prix,20,3.4608913911031522
+2024,Validation,Improved LR,Mexico City Grand Prix,20,3.320554806275425
+2024,Validation,Improved LR,United States Grand Prix,19,2.9663448883783596
+2024,Validation,Improved LR,Monaco Grand Prix,20,2.8664541353717548
+2024,Validation,Improved LR,Las Vegas Grand Prix,20,2.6734204508473005
+2024,Validation,Improved LR,Miami Grand Prix,20,2.6489305658598714
+2024,Validation,Improved LR,Saudi Arabian Grand Prix,19,2.572094393877354
+2024,Validation,Improved LR,Belgian Grand Prix,20,2.5424414144860865
+2024,Validation,Improved LR,Chinese Grand Prix,20,2.445739862037586
+2024,Validation,Improved LR,Hungarian Grand Prix,20,2.380111088973405
+2024,Validation,Improved LR,Italian Grand Prix,19,2.302494793671463
+2024,Validation,Improved LR,Emilia Romagna Grand Prix,20,2.2712961767715196
+2024,Validation,Improved LR,Dutch Grand Prix,20,2.157438514447178
+2024,Validation,Improved LR,Spanish Grand Prix,20,2.124304280570573
+2024,Validation,Improved LR,Singapore Grand Prix,20,2.010133970520183
+2024,Validation,Improved LR,Japanese Grand Prix,20,1.8940148976500688
+2024,Validation,Original LR,Canadian Grand Prix,20,4.457908697392599
+2024,Validation,Original LR,Australian Grand Prix,19,4.258139734812289
+2024,Validation,Original LR,Austrian Grand Prix,20,3.7318171952033348
+2024,Validation,Original LR,Azerbaijan Grand Prix,20,3.722509367111571
+2024,Validation,Original LR,British Grand Prix,20,3.699643669403719
+2024,Validation,Original LR,Abu Dhabi Grand Prix,19,3.673201368385471
+2024,Validation,Original LR,São Paulo Grand Prix,20,3.6175483271608955
+2024,Validation,Original LR,Qatar Grand Prix,20,3.4685177265499756
+2024,Validation,Original LR,Mexico City Grand Prix,20,3.3233126066042886
+2024,Validation,Original LR,United States Grand Prix,19,2.9660528673957605
+2024,Validation,Original LR,Monaco Grand Prix,20,2.866127432017778
+2024,Validation,Original LR,Las Vegas Grand Prix,20,2.6691752880396833
+2024,Validation,Original LR,Miami Grand Prix,20,2.648918107540719
+2024,Validation,Original LR,Saudi Arabian Grand Prix,19,2.571942605497011
+2024,Validation,Original LR,Belgian Grand Prix,20,2.5457731951193106
+2024,Validation,Original LR,Chinese Grand Prix,20,2.445545960937713
+2024,Validation,Original LR,Hungarian Grand Prix,20,2.376558193573047
+2024,Validation,Original LR,Italian Grand Prix,19,2.3033655335555676
+2024,Validation,Original LR,Emilia Romagna Grand Prix,20,2.270012324415542
+2024,Validation,Original LR,Dutch Grand Prix,20,2.1594873496656564
+2024,Validation,Original LR,Spanish Grand Prix,20,2.127965505610823
+2024,Validation,Original LR,Singapore Grand Prix,20,2.010225347013247
+2024,Validation,Original LR,Japanese Grand Prix,20,1.8938462781178047
+2024,Validation,Recent Points LR,Canadian Grand Prix,20,4.374063393574999
+2024,Validation,Recent Points LR,Australian Grand Prix,19,4.222078762300432
+2024,Validation,Recent Points LR,São Paulo Grand Prix,20,3.674217868747095
+2024,Validation,Recent Points LR,Austrian Grand Prix,20,3.6590322736873766
+2024,Validation,Recent Points LR,British Grand Prix,20,3.63402904136208
+2024,Validation,Recent Points LR,Azerbaijan Grand Prix,20,3.595476152890103
+2024,Validation,Recent Points LR,Abu Dhabi Grand Prix,19,3.546755825066915
+2024,Validation,Recent Points LR,Qatar Grand Prix,20,3.441078455404499
+2024,Validation,Recent Points LR,Mexico City Grand Prix,20,3.2245040415623256
+2024,Validation,Recent Points LR,United States Grand Prix,19,2.9957925034823054
+2024,Validation,Recent Points LR,Monaco Grand Prix,20,2.802449053083337
+2024,Validation,Recent Points LR,Las Vegas Grand Prix,20,2.6902359502072333
+2024,Validation,Recent Points LR,Miami Grand Prix,20,2.6412209412166563
+2024,Validation,Recent Points LR,Saudi Arabian Grand Prix,19,2.5771637162102845
+2024,Validation,Recent Points LR,Belgian Grand Prix,20,2.5500735476631577
+2024,Validation,Recent Points LR,Chinese Grand Prix,20,2.450313074533198
+2024,Validation,Recent Points LR,Hungarian Grand Prix,20,2.3043237463293575
+2024,Validation,Recent Points LR,Italian Grand Prix,19,2.2187509219055106
+2024,Validation,Recent Points LR,Emilia Romagna Grand Prix,20,2.2071484010819393
+2024,Validation,Recent Points LR,Dutch Grand Prix,20,2.1227038082906957
+2024,Validation,Recent Points LR,Spanish Grand Prix,20,2.107060270738133
+2024,Validation,Recent Points LR,Singapore Grand Prix,20,1.9702370412814714
+2024,Validation,Recent Points LR,Japanese Grand Prix,20,1.8766303525863028
+2025,Test,Random Forest,Dutch Grand Prix,20,5.549248728528234
+2025,Test,Random Forest,Las Vegas Grand Prix,20,4.214711552320386
+2025,Test,Random Forest,British Grand Prix,20,4.064729862807038
+2025,Test,Random Forest,Chinese Grand Prix,20,3.895373577983979
+2025,Test,Random Forest,Austrian Grand Prix,20,3.8508019696071236
+2025,Test,Random Forest,Spanish Grand Prix,19,3.814633923314759
+2025,Test,Random Forest,Azerbaijan Grand Prix,20,3.8121344923317864
+2025,Test,Random Forest,São Paulo Grand Prix,20,3.7052810215018277
+2025,Test,Random Forest,Canadian Grand Prix,20,3.633433763842205
+2025,Test,Random Forest,Qatar Grand Prix,20,3.451775317664283
+2025,Test,Random Forest,Monaco Grand Prix,20,3.4021600786803727
+2025,Test,Random Forest,Emilia Romagna Grand Prix,19,3.336999937873455
+2025,Test,Random Forest,Abu Dhabi Grand Prix,20,3.2535752813753844
+2025,Test,Random Forest,Bahrain Grand Prix,20,3.2190616594265715
+2025,Test,Random Forest,Japanese Grand Prix,20,3.067658621576142
+2025,Test,Random Forest,Hungarian Grand Prix,20,3.060724577190262
+2025,Test,Random Forest,Belgian Grand Prix,20,3.022256714814776
+2025,Test,Random Forest,Italian Grand Prix,20,3.001889678415384
+2025,Test,Random Forest,United States Grand Prix,20,2.978725651316105
+2025,Test,Random Forest,Mexico City Grand Prix,20,2.909920082451458
+2025,Test,Random Forest,Singapore Grand Prix,20,2.809462185947709
+2025,Test,Random Forest,Saudi Arabian Grand Prix,20,2.71417787858677
+2025,Test,Random Forest,Miami Grand Prix,20,2.193210524551513
+2025,Test,Recent Points LR,Dutch Grand Prix,20,5.3034741394060685
+2025,Test,Recent Points LR,Las Vegas Grand Prix,20,4.514055513173062
+2025,Test,Recent Points LR,British Grand Prix,20,4.0256873746976884
+2025,Test,Recent Points LR,Chinese Grand Prix,20,3.970438156593354
+2025,Test,Recent Points LR,Austrian Grand Prix,20,3.758329337795128
+2025,Test,Recent Points LR,Canadian Grand Prix,20,3.704833339213906
+2025,Test,Recent Points LR,Azerbaijan Grand Prix,20,3.6173490900109035
+2025,Test,Recent Points LR,Spanish Grand Prix,19,3.5779466951296515
+2025,Test,Recent Points LR,São Paulo Grand Prix,20,3.519720610970346
+2025,Test,Recent Points LR,Qatar Grand Prix,20,3.2801895920943953
+2025,Test,Recent Points LR,Emilia Romagna Grand Prix,19,3.1777270051104147
+2025,Test,Recent Points LR,Abu Dhabi Grand Prix,20,3.164231184294991
+2025,Test,Recent Points LR,Bahrain Grand Prix,20,3.1386929288011483
+2025,Test,Recent Points LR,Monaco Grand Prix,20,3.1198331746440915
+2025,Test,Recent Points LR,United States Grand Prix,20,3.008337346283093
+2025,Test,Recent Points LR,Mexico City Grand Prix,20,2.9238181320702665
+2025,Test,Recent Points LR,Hungarian Grand Prix,20,2.9080464227826446
+2025,Test,Recent Points LR,Belgian Grand Prix,20,2.888252730222167
+2025,Test,Recent Points LR,Italian Grand Prix,20,2.8150963776132065
+2025,Test,Recent Points LR,Japanese Grand Prix,20,2.7165243713543994
+2025,Test,Recent Points LR,Singapore Grand Prix,20,2.5759685769663303
+2025,Test,Recent Points LR,Saudi Arabian Grand Prix,20,2.544152341257846
+2025,Test,Recent Points LR,Miami Grand Prix,20,2.214322166918096

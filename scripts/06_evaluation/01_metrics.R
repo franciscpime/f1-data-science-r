@@ -1,4 +1,5 @@
-# Calculate prediction errors for the 2024 validation dataset
+# Calculation of errors made in attempting to predict final positions
+# using validation dataset (2024)
 validation_data <- validation_data |>
     mutate(
         error = position - predicted_position,
@@ -6,121 +7,115 @@ validation_data <- validation_data |>
     ) |>
     arrange(desc(absolute_error))
 
-# Mean Absolute Error (MAE)
-linear_regression_mae <- mean(
-    abs(validation_data$position - validation_data$predicted_position)
+
+#######################################################
+#         CALCULATE MAE (Mean Absolute Error)         #
+#   mean(abs(Actual Position - Predicted Position))   #
+#######################################################
+
+calculate_mae <- function(actual, predicted) {
+    mean(abs(actual-predicted))
+}
+
+linear_regression_mae <- calculate_mae(
+    validation_data$position, 
+    validation_data$predicted_position
 )
 
-# Root Mean Squared Error (RMSE)
-linear_regression_rmse <- sqrt(
-    mean(
-        (validation_data$position - validation_data$predicted_position)^2
+baseline_mae <- calculate_mae(
+    validation_data$position, 
+    validation_data$baseline_prediction
+)
+        
+decision_tree_mae <- calculate_mae(
+        validation_data$position, 
+        validation_data$tree_prediction
     )
-)
 
-# Evaluate predictions based on the training-set mean
-baseline_mae <- mean(
-    abs(validation_data$position - validation_data$baseline_prediction)
-)
-
-baseline_rmse <- sqrt(
-    mean(
-        (validation_data$position - validation_data$baseline_prediction)^2
+improved_linear_model_mae <- calculate_mae(
+        validation_data$position, 
+        validation_data$improved_prediction
     )
-)
 
-# Calculate percentage improvement over the baseline MAE
+recent_position_LR_mae <- calculate_mae(
+        validation_data$position, 
+        validation_data$recent_prediction
+    )
+
+recent_points_LR_mae_2024 <- calculate_mae(
+        validation_data$position,
+            validation_data$recent_points_prediction
+    )
+
+both_recent_features_mae <- calculate_mae(
+        validation_data$position, 
+        validation_data$both_recent_prediction
+    )
+
+log_recent_points_LR_mae <- calculate_mae(
+        validation_data$position,
+            validation_data$log_recent_points_prediction
+    )
+
+recent_points_LR_mae_2025 <- calculate_mae(
+        test_data$position, 
+        recent_points_test_prediction
+    )
+
 mae_improvement <- (
     (baseline_mae - linear_regression_mae) / baseline_mae
 ) * 100
 
-# Decision Tree Evaluation
-decision_tree_mae <- mean(
-    abs(validation_data$position - validation_data$tree_prediction)
-)
+#######################################################
+#       CALCULATE RMSE (Root Mean Squared Error)      #
+#   √mean((Actual Position - Predicted Position)^2)   #
+#######################################################
 
-decision_tree_rmse <- sqrt(
-    mean(
-        (validation_data$position - validation_data$tree_prediction)^2
+calculate_rmse <- function(actual, predicted) {
+    sqrt(mean((actual-predicted)^2))
+}
+
+linear_regression_rmse <- calculate_rmse(
+        validation_data$position, 
+        validation_data$predicted_position
     )
-)
-# Improved Linear Regression Evaluation
-improved_model_mae <- mean(
-    abs(validation_data$position - validation_data$improved_prediction)
-)
 
-improved_model_rmse <- sqrt(
-    mean(
-        (validation_data$position - validation_data$improved_prediction)^2
+baseline_rmse <- calculate_rmse(
+        validation_data$position, 
+        validation_data$baseline_prediction
     )
-)
 
-# Recent Position Linear Regression Evaluation
-recent_model_mae <- mean(
-    abs(validation_data$position - validation_data$recent_prediction)
-)
-
-recent_model_rmse <- sqrt(
-    mean(
-        (validation_data$position - validation_data$recent_prediction)^2
+decision_tree_rmse <- calculate_rmse(
+        validation_data$position, 
+        validation_data$tree_prediction
     )
-)
 
-# Recent Points Linear Regression Evaluation
-recent_points_mae <- mean(
-    abs(
-        validation_data$position -
-            validation_data$recent_points_prediction
+improved_linear_model_rmse <- calculate_rmse(
+        validation_data$position, 
+        validation_data$improved_prediction
     )
-)
 
-recent_points_rmse <- sqrt(
-    mean(
-        (
-            validation_data$position -
-                validation_data$recent_points_prediction
-        )^2
+recent_position_LR_rmse <- calculate_rmse(
+        validation_data$position, 
+        validation_data$recent_prediction
     )
-)
 
-
-# Both Recent Features Model Evaluation
-both_recent_mae <- mean(
-    abs(validation_data$position - validation_data$both_recent_prediction)
-)
-
-both_recent_rmse <- sqrt(
-    mean(
-        (
-            validation_data$position - 
-            validation_data$both_recent_prediction
-        )^2
+recent_points_LR_rmse_2024 <- calculate_rmse(
+        validation_data$position,
+        validation_data$recent_points_prediction
     )
-)
 
-# 19. Log Transformed Recent Points Model Evaluation
-log_recent_points_mae <- mean(
-    abs(
-        validation_data$position -
-            validation_data$log_recent_points_prediction
+both_recent_features_rmse <- calculate_rmse(
+        validation_data$position, 
+        validation_data$both_recent_prediction
     )
-)
 
-log_recent_points_rmse <- sqrt(
-    mean(
-        (
-            validation_data$position -
-                validation_data$log_recent_points_prediction
-        )^2
+log_recent_points_LR_rmse <- calculate_rmse(
+        validation_data$position,
+        validation_data$log_recent_points_prediction
     )
-)
 
-recent_points_test_mae <- mean(
-    abs(test_data$position - recent_points_test_prediction)
-)
-
-recent_points_test_rmse <- sqrt(
-    mean(
-        (test_data$position - recent_points_test_prediction)^2
+recent_points_LR_rmse_2025 <- calculate_rmse(
+        test_data$position, 
+        recent_points_test_prediction
     )
-)
