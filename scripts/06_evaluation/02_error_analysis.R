@@ -1,7 +1,18 @@
-# Create a unified table of individual prediction errors
-# Each row represents one prediction for one driver and race
+#####################################################################
+#                     PREDICTION ERROR ANALYSIS                     #
+# Create a single table with prediction errors:                     #
+#   >> includes predictions from 2024 Validation and 2025 Test      #
+#   >> each row: one driver's prediction in one race                #
+#   >> compares different models using the same table               #
+#   >> Actual: real finishing position                              #
+#   >> Predicted: position predicted by the model                   #
+#   >> Error = Actual - Predicted                                   #
+#       >>> positive: driver finished worse than predicted          #
+#       >>> negative: driver finished better than predicted         #
+#   >> Absolute_Error: size of the mistake, ignoring its sign       #
+#####################################################################
+
 prediction_errors <- bind_rows(
-    # 2024 Original Linear Regression
     validation_data |>
         transmute(
             Year = 2024L,
@@ -14,8 +25,6 @@ prediction_errors <- bind_rows(
             Actual = position,
             Predicted = predicted_position
         ),
-
-    # 2024 Improved Linear Regression
     validation_data |>
         transmute(
             Year = 2024L,
@@ -28,8 +37,6 @@ prediction_errors <- bind_rows(
             Actual = position,
             Predicted = improved_prediction
         ),
-
-    # 2024 Recent Points Linear Regression
     validation_data |>
         transmute(
             Year = 2024L,
@@ -42,8 +49,6 @@ prediction_errors <- bind_rows(
             Actual = position,
             Predicted = recent_points_prediction
         ),
-
-    # 2025 Recent Points Linear Regression
     test_data |>
         transmute(
             Year = 2025L,
@@ -56,8 +61,6 @@ prediction_errors <- bind_rows(
             Actual = position,
             Predicted = recent_points_test_prediction
         ),
-
-    # 2025 Random Forest
     test_data |>
         transmute(
             Year = 2025L,
@@ -70,10 +73,16 @@ prediction_errors <- bind_rows(
             Actual = position,
             Predicted = random_forest_test_prediction
         )
-
-) |> mutate(
+) |>
+    mutate(
         Error = Actual - Predicted,
         Absolute_Error = abs(Error),
+
+        # Divide starting positions into groups:
+        #   >> makes it easier to compare errors across the grid
+        #   >> 1-5: front of the grid
+        #   >> 6-10 and 11-15: middle positions
+        #   >> 16+: back of the grid
         Grid_Group = cut(
             Grid,
             breaks = c(-Inf, 5, 10, 15, Inf),
@@ -92,7 +101,15 @@ save(
 )
 
 
-# Error summary by race completion status
+#####################################################################
+#                       ERRORS BY RACE STATUS                       #
+# Check whether race results affect prediction accuracy:            #
+#   >> group predictions by race status                             #
+#   >> Count: number of predictions in each status                  #
+#   >> MAE: average absolute error for that status                  #
+#   >> helps compare finished races with retirements or DNFs        #
+#   >> higher MAE: more difficult results to predict                #
+#####################################################################
 
 errors_by_status <- prediction_errors |>
     group_by(Year, Dataset, Model, Status) |>
@@ -104,7 +121,13 @@ errors_by_status <- prediction_errors |>
     arrange(Year, Model, desc(MAE))
 
 
-# Error summary by starting grid position
+#####################################################################
+#                       ERRORS BY GRID POSITION                     #
+# Check how starting position affects prediction accuracy:          #
+#   >> calculate MAE for each individual grid position              #
+#   >> Count: number of predictions from that position              #
+#   >> helps identify grid positions with larger errors             #
+#####################################################################
 
 errors_by_grid <- prediction_errors |>
     group_by(Year, Dataset, Model, Grid) |>
@@ -116,7 +139,13 @@ errors_by_grid <- prediction_errors |>
     arrange(Year, Model, Grid)
 
 
-# Error summary by starting grid group
+#####################################################################
+#                        ERRORS BY GRID GROUP                       #
+# Compare errors between different parts of the starting grid:      #
+#   >> group positions into 1-5, 6-10, 11-15 and 16+                #
+#   >> calculate the average error for each group                   #
+#   >> easier to compare than looking at every position separately  #
+#####################################################################
 
 errors_by_grid_group <- prediction_errors |>
     group_by(Year, Dataset, Model, Grid_Group) |>
@@ -128,7 +157,14 @@ errors_by_grid_group <- prediction_errors |>
     arrange(Year, Model, Grid_Group)
 
 
-# Error summary by race
+#####################################################################
+#                          ERRORS BY RACE                           #
+# Find the races where the models made the biggest mistakes:        #
+#   >> calculate MAE separately for each Grand Prix                 #
+#   >> Count: number of driver predictions in that race             #
+#   >> higher MAE: less accurate predictions for that race          #
+#   >> useful for identifying unusual or unpredictable races        #
+#####################################################################
 
 errors_by_race <- prediction_errors |>
     group_by(Year, Dataset, Model, Race) |>
@@ -140,7 +176,14 @@ errors_by_race <- prediction_errors |>
     arrange(Year, Model, desc(MAE))
 
 
-# Error summary by driver
+#####################################################################
+#                         ERRORS BY DRIVER                          #
+# Check which drivers are harder for the models to predict:         #
+#   >> calculate MAE separately for each driver                     #
+#   >> Count: number of predictions made for that driver            #
+#   >> higher MAE: larger average prediction mistakes               #
+#   >> useful for spotting drivers with less predictable results    #
+#####################################################################
 
 errors_by_driver <- prediction_errors |>
     group_by(Year, Dataset, Model, Driver) |>
@@ -152,7 +195,14 @@ errors_by_driver <- prediction_errors |>
     arrange(Year, Model, desc(MAE))
 
 
-# Ten largest errors for each model and year
+#####################################################################
+#                        PREDICTION OUTLIERS                        #
+# Find the largest individual prediction mistakes:                  #
+#   >> select the 10 biggest absolute errors for each model/year    #
+#   >> with_ties = FALSE keeps exactly 10 predictions per group     #
+#   >> useful for checking unexpected race results                  #
+#   >> helps explain why some predictions were very inaccurate      #
+#####################################################################
 
 prediction_outliers <- prediction_errors |>
     group_by(Year, Dataset, Model) |>

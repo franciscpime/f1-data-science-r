@@ -1,11 +1,14 @@
-Models,Variables,VIFs
-Original,grid,1.5655668034182229
-Original,prev_avg_position,5.995455744159886
-Original,prev_avg_points,5.8515454451967015
-Improved,grid,1.5714531068748996
-Improved,prev_avg_position,14.387551338559797
-Improved,prev_avg_points,5.851826569041271
-Improved,recent_avg_position,9.751763935757584
-Recent,grid,1.561640181379005
-Recent,prev_avg_points,4.075255328949348
-Recent,recent_avg_position,4.06367058080514
+Model,Variable,VIF
+Original LR,grid,1.5655668034182229
+Original LR,prev_avg_position,5.995455744159886
+Original LR,prev_avg_points,5.8515454451967015
+Improved LR,grid,1.5714531068748996
+Improved LR,prev_avg_position,14.387551338559797
+Improved LR,prev_avg_points,5.851826569041271
+Improved LR,recent_avg_position,9.751763935757584
+Recent Position LR,grid,1.561640181379005
+Recent Position LR,prev_avg_points,4.075255328949348
+Recent Position LR,recent_avg_position,4.06367058080514
+Recent Points LR,grid,1.5713874118935072
+Recent Points LR,prev_avg_position,4.62913561678334
+Recent Points LR,recent_avg_points,4.4660424560961465
