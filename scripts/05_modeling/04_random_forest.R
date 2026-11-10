@@ -30,23 +30,39 @@ random_forest_model <- ranger(
     min.node.size=120
 )
 
-random_forest_predictions <- predict(
+random_forest_prediction <- predict(
     object=random_forest_model, 
     data=validation_data
 )$predictions
 
 random_forest_mae <- mean(
-    abs(random_forest_predictions - validation_data$position)
+    abs(random_forest_prediction - validation_data$position)
 )
 
 random_forest_rmse <- sqrt(
-    mean((random_forest_predictions - validation_data$position)^2)
+    mean((random_forest_prediction - validation_data$position)^2)
+)
+
+random_forest_test_prediction <- predict(
+    object=random_forest_model, 
+    data=test_data
+)$predictions
+
+random_forest_test_mae <- mean(
+    abs(random_forest_test_prediction - test_data$position)
+)
+
+random_forest_test_rmse <- sqrt(
+    mean((random_forest_test_prediction - test_data$position)^2)
 )
 
 save(
     random_forest_model,
-    random_forest_predictions,
+    random_forest_prediction,
     random_forest_mae,
     random_forest_rmse,
+    random_forest_test_prediction,
+    random_forest_test_mae,
+    random_forest_test_rmse,
     file = "../../data/processed/random_forest_results.RData"
 )

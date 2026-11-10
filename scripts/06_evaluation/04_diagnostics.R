@@ -145,7 +145,24 @@ write_csv(
 
 # Linearity Diagnostics
 # Component + residual plots for the improved model
-crPlots(improved_model)
+# crPlots(improved_model)
 
-# Examine linearity assumptions for the recent points model
-crPlots(recent_points_model)
+# # Examine linearity assumptions for the recent points model
+# crPlots(recent_points_model)
+
+errors_by_status_2025_graph <- ggplot(
+    errors_by_status_long_2025,
+    aes(x = Status, y = Errors, fill = Models)
+) +
+geom_col(position = "dodge") +
+labs(
+    title = "Errors by Status"
+) +
+theme_minimal()
+
+ggsave(
+    "../../plots/errors_by_status_2025_graph.png",
+    width = 10,
+    height = 6,
+    dpi = 300
+)

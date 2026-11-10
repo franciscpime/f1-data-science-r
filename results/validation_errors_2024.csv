@@ -1,0 +1,456 @@
+Driver,Race,Actual,Linear_Predicted,Linear_Error,Status
+Max Verstappen,Australian Grand Prix,19,1.2282932892225311,17.77170671077747,Retired
+Lando Norris,Austrian Grand Prix,20,3.5424723183361166,16.457527681663883,Lapped
+George Russell,British Grand Prix,19,4.990873489180201,14.009126510819799,Retired
+George Russell,Belgian Grand Prix,20,7.194169667211567,12.805830332788432,Disqualified
+Charles Leclerc,Canadian Grand Prix,19,6.330582959544174,12.669417040455826,Retired
+Carlos Sainz,Azerbaijan Grand Prix,18,5.756659537924661,12.243340462075338,Retired
+Pierre Gasly,Las Vegas Grand Prix,20,9.74259732782161,10.25740267217839,Retired
+Pierre Gasly,São Paulo Grand Prix,3,13.2435351845802,10.2435351845802,Finished
+George Russell,Australian Grand Prix,17,7.176691427953961,9.823308572046038,Retired
+Lewis Hamilton,United States Grand Prix,20,10.21259156893999,9.78740843106001,Retired
+Sergio Pérez,Abu Dhabi Grand Prix,20,10.563140329048418,9.436859670951582,Retired
+Sergio Pérez,Monaco Grand Prix,18,8.643605417487734,9.356394582512266,Retired
+Sergio Pérez,Azerbaijan Grand Prix,17,7.727385587548619,9.272614412451382,Retired
+Esteban Ocon,São Paulo Grand Prix,2,10.754489632566075,8.754489632566075,Finished
+Carlos Sainz,Canadian Grand Prix,16,7.423792776316974,8.576207223683026,Retired
+Sergio Pérez,Canadian Grand Prix,18,9.606821244443992,8.393178755556008,Retired
+Lance Stroll,Saudi Arabian Grand Prix,19,10.925482570634003,8.074517429365997,Retired
+Lewis Hamilton,Australian Grand Prix,18,10.01032055503377,7.98967944496623,Retired
+Max Verstappen,São Paulo Grand Prix,1,8.922539566832112,7.922539566832112,Finished
+Yuki Tsunoda,Azerbaijan Grand Prix,20,12.381230239676144,7.618769760323856,Retired
+Alexander Albon,Singapore Grand Prix,20,12.412975253273425,7.587024746726575,Retired
+Yuki Tsunoda,Mexico City Grand Prix,20,12.606084640530488,7.393915359469512,Retired
+Lewis Hamilton,Las Vegas Grand Prix,2,9.303702964633944,7.303702964633944,Finished
+Pierre Gasly,Qatar Grand Prix,5,12.127436530951826,7.127436530951826,Finished
+Fernando Alonso,Emilia Romagna Grand Prix,19,11.97729295586746,7.02270704413254,Lapped
+Alexander Albon,Mexico City Grand Prix,19,12.012821009602142,6.987178990397858,Retired
+Alexander Albon,Japanese Grand Prix,20,13.064777751534553,6.935222248465447,Retired
+Lance Stroll,São Paulo Grand Prix,19,12.079143779239361,6.920856220760639,Did not start
+Sergio Pérez,Qatar Grand Prix,17,10.118605281194219,6.881394718805781,Retired
+Lewis Hamilton,Abu Dhabi Grand Prix,4,10.751720223522664,6.751720223522664,Finished
+Valtteri Bottas,Chinese Grand Prix,20,13.255237045712015,6.744762954287985,Retired
+Fernando Alonso,Mexico City Grand Prix,18,11.428955128466285,6.571044871533715,Retired
+Lance Stroll,Azerbaijan Grand Prix,19,12.528610209015126,6.471389790984874,Retired
+Alexander Albon,São Paulo Grand Prix,18,11.534129840015419,6.465870159984581,Did not start
+Nico Hülkenberg,São Paulo Grand Prix,20,13.591740719746863,6.408259280253137,Disqualified
+Yuki Tsunoda,Italian Grand Prix,20,13.634382071366437,6.365617928633563,Retired
+Lance Stroll,Australian Grand Prix,6,12.349068294930413,6.349068294930413,Finished
+Daniel Ricciardo,Japanese Grand Prix,19,12.69496618293598,6.30503381706402,Retired
+Alexander Albon,Emilia Romagna Grand Prix,20,13.848839929182986,6.1511600708170135,Retired
+Charles Leclerc,Abu Dhabi Grand Prix,3,9.122157632848115,6.122157632848115,Finished
+Fernando Alonso,Austrian Grand Prix,18,11.897996272292866,6.1020037277071335,Lapped
+Charles Leclerc,British Grand Prix,14,8.105254649893352,5.894745350106648,Lapped
+Nico Hülkenberg,Italian Grand Prix,17,11.131645533471737,5.868354466528263,Lapped
+George Russell,United States Grand Prix,6,11.824205159483457,5.824205159483457,Finished
+Guanyu Zhou,Qatar Grand Prix,8,13.806995768990523,5.806995768990523,Finished
+Yuki Tsunoda,Spanish Grand Prix,19,13.286919095109,5.713080904890999,Lapped
+Carlos Sainz,São Paulo Grand Prix,16,10.35330049976259,5.6466995002374105,Retired
+Lance Stroll,Italian Grand Prix,19,13.502181686269573,5.497818313730427,Lapped
+Oscar Piastri,Miami Grand Prix,13,7.503584665916943,5.496415334083057,Finished
+Nico Hülkenberg,Austrian Grand Prix,6,11.487446365624233,5.487446365624233,Finished
+Logan Sargeant,Canadian Grand Prix,20,14.521119674480225,5.478880325519775,Retired
+Kevin Magnussen,Singapore Grand Prix,19,13.545732717217446,5.4542672827825545,Retired
+George Russell,Azerbaijan Grand Prix,3,8.446035391626136,5.446035391626136,Finished
+Oscar Piastri,Austrian Grand Prix,2,7.434490235383068,5.434490235383068,Finished
+Charles Leclerc,Italian Grand Prix,1,6.431545773412656,5.431545773412656,Finished
+George Russell,Austrian Grand Prix,1,6.415610353592187,5.415610353592187,Finished
+Esteban Ocon,Qatar Grand Prix,20,14.588070780791924,5.411929219208076,Retired
+Pierre Gasly,British Grand Prix,20,14.635033302679888,5.364966697320112,Did not start
+Nico Hülkenberg,Belgian Grand Prix,18,12.671104880293676,5.328895119706324,Finished
+Lando Norris,Qatar Grand Prix,10,4.707330432493927,5.292669567506073,Finished
+Kevin Magnussen,Austrian Grand Prix,8,13.208257378786264,5.208257378786264,Finished
+Pierre Gasly,Canadian Grand Prix,9,14.191711358515926,5.191711358515926,Finished
+Lewis Hamilton,British Grand Prix,1,6.1464625876565275,5.1464625876565275,Finished
+Yuki Tsunoda,Australian Grand Prix,7,12.144217188726229,5.144217188726229,Finished
+Valtteri Bottas,Abu Dhabi Grand Prix,18,12.876731120534403,5.123268879465597,Retired
+Alexander Albon,Azerbaijan Grand Prix,7,12.120579258996072,5.120579258996072,Finished
+Esteban Ocon,United States Grand Prix,18,12.89556366751331,5.10443633248669,Lapped
+Yuki Tsunoda,Chinese Grand Prix,19,13.90634993234476,5.09365006765524,Retired
+Lance Stroll,Miami Grand Prix,17,11.951281709448674,5.048718290551326,Finished
+Nico Hülkenberg,Monaco Grand Prix,19,13.959390086956528,5.040609913043472,Retired
+Lando Norris,Miami Grand Prix,1,6.038160716458293,5.038160716458293,Finished
+Esteban Ocon,Las Vegas Grand Prix,17,11.969257637105562,5.030742362894438,Lapped
+Liam Lawson,Mexico City Grand Prix,16,10.973309931820017,5.026690068179983,Lapped
+Charles Leclerc,Austrian Grand Prix,11,6.005253771046652,4.994746228953348,Finished
+Lewis Hamilton,Canadian Grand Prix,4,8.968638374707387,4.968638374707387,Finished
+Yuki Tsunoda,Miami Grand Prix,7,11.947704977203513,4.947704977203513,Finished
+Yuki Tsunoda,Dutch Grand Prix,17,12.10013102488735,4.89986897511265,Lapped
+Sergio Pérez,Mexico City Grand Prix,17,12.106932338320137,4.893067661679863,Lapped
+Pierre Gasly,Hungarian Grand Prix,20,15.122006327532183,4.877993672467817,Retired
+Kevin Magnussen,Monaco Grand Prix,20,15.134038541209875,4.8659614587901245,Retired
+Esteban Ocon,Canadian Grand Prix,10,14.817850946730333,4.817850946730333,Finished
+Guanyu Zhou,Dutch Grand Prix,20,15.19226716892742,4.807732831072579,Lapped
+Nico Hülkenberg,Australian Grand Prix,9,13.794982548629765,4.794982548629765,Finished
+Kevin Magnussen,Miami Grand Prix,19,14.265991798616243,4.734008201383757,Finished
+Lance Stroll,Canadian Grand Prix,7,11.731637842065682,4.731637842065682,Finished
+George Russell,Las Vegas Grand Prix,1,5.72062876060788,4.72062876060788,Finished
+Oscar Piastri,Monaco Grand Prix,2,6.711098710540957,4.711098710540957,Finished
+Sergio Pérez,Hungarian Grand Prix,7,11.687537765698442,4.687537765698442,Finished
+Nico Hülkenberg,Saudi Arabian Grand Prix,10,14.675755996092644,4.675755996092644,Finished
+Franco Colapinto,Qatar Grand Prix,19,14.332970677958958,4.667029322041042,Retired
+Kevin Magnussen,Mexico City Grand Prix,7,11.607266582687666,4.607266582687666,Finished
+Sergio Pérez,British Grand Prix,17,12.395586255789212,4.604413744210788,Lapped
+Daniel Ricciardo,Chinese Grand Prix,18,13.461569774641912,4.538430225358088,Retired
+Carlos Sainz,Mexico City Grand Prix,1,5.520784247553394,4.520784247553394,Finished
+Alexander Albon,Las Vegas Grand Prix,19,14.502328790232461,4.497671209767539,Retired
+Carlos Sainz,United States Grand Prix,2,6.485236599245367,4.485236599245367,Finished
+Liam Lawson,Abu Dhabi Grand Prix,17,12.538640807757625,4.461359192242375,Retired
+Lewis Hamilton,Qatar Grand Prix,12,7.5762597853827955,4.4237402146172045,Finished
+Alexander Albon,Miami Grand Prix,18,13.595527533327338,4.404472466672662,Finished
+Logan Sargeant,Miami Grand Prix,20,15.605838427467253,4.394161572532747,Retired
+Lance Stroll,Qatar Grand Prix,18,13.63947801304681,4.36052198695319,Retired
+Alexander Albon,Canadian Grand Prix,17,12.649022621780928,4.350977378219072,Retired
+Lewis Hamilton,Belgian Grand Prix,1,5.334368335190282,4.334368335190282,Finished
+Esteban Ocon,Monaco Grand Prix,17,12.680497245159696,4.319502754840304,Retired
+Oscar Piastri,Saudi Arabian Grand Prix,4,8.305697814577012,4.305697814577012,Finished
+Lewis Hamilton,Spanish Grand Prix,3,7.28749586095423,4.28749586095423,Finished
+Lando Norris,Chinese Grand Prix,2,6.284753715789611,4.284753715789611,Finished
+Lewis Hamilton,Miami Grand Prix,6,10.280117416129256,4.280117416129256,Finished
+Oscar Piastri,Abu Dhabi Grand Prix,10,5.733974114887651,4.266025885112349,Finished
+Oscar Piastri,Hungarian Grand Prix,1,5.244320792952161,4.244320792952161,Finished
+Lewis Hamilton,Chinese Grand Prix,9,13.231960978043954,4.231960978043954,Finished
+Charles Leclerc,Dutch Grand Prix,3,7.223740837244267,4.223740837244267,Finished
+Nico Hülkenberg,British Grand Prix,6,10.18742989589547,4.18742989589547,Finished
+Franco Colapinto,São Paulo Grand Prix,17,12.847230221824173,4.152769778175827,Retired
+Lewis Hamilton,Mexico City Grand Prix,4,8.13921454883803,4.13921454883803,Finished
+Lance Stroll,British Grand Prix,7,11.117512327270077,4.117512327270077,Finished
+Daniel Ricciardo,Singapore Grand Prix,18,13.885107670861444,4.114892329138556,Lapped
+Valtteri Bottas,Dutch Grand Prix,19,14.908163378851294,4.0918366211487065,Lapped
+Franco Colapinto,Abu Dhabi Grand Prix,19,14.933714962854642,4.066285037145358,Retired
+Lando Norris,Australian Grand Prix,3,7.058604647714637,4.058604647714637,Finished
+Alexander Albon,Abu Dhabi Grand Prix,11,15.056056690813605,4.056056690813605,Lapped
+Lando Norris,Abu Dhabi Grand Prix,1,4.95978900830437,3.9597890083043703,Finished
+Charles Leclerc,United States Grand Prix,1,4.958905995662133,3.958905995662133,Finished
+Lewis Hamilton,Emilia Romagna Grand Prix,6,9.951340378135308,3.951340378135308,Finished
+Guanyu Zhou,British Grand Prix,18,14.062675068541651,3.937324931458349,Lapped
+Nico Hülkenberg,United States Grand Prix,8,11.907814333393716,3.9078143333937163,Finished
+Fernando Alonso,Azerbaijan Grand Prix,6,9.901132549807722,3.9011325498077216,Finished
+Lance Stroll,Emilia Romagna Grand Prix,9,12.828627749086841,3.8286277490868414,Finished
+Lando Norris,Azerbaijan Grand Prix,4,7.751752420785357,3.7517524207853574,Finished
+Pierre Gasly,Saudi Arabian Grand Prix,20,16.25181706876573,3.7481829312342683,Retired
+Max Verstappen,Japanese Grand Prix,1,4.746838022379667,3.7468380223796673,Finished
+Oscar Piastri,Emilia Romagna Grand Prix,4,7.744347506380513,3.744347506380513,Finished
+Oscar Piastri,Belgian Grand Prix,2,5.742501145007858,3.742501145007858,Finished
+Daniel Ricciardo,Austrian Grand Prix,9,12.724974324270558,3.7249743242705584,Finished
+Guanyu Zhou,Hungarian Grand Prix,19,15.286817465506122,3.7131825344938783,Lapped
+Guanyu Zhou,Saudi Arabian Grand Prix,18,14.286900690361504,3.713099309638496,Lapped
+Alexander Albon,Monaco Grand Prix,9,12.712651219048492,3.7126512190484924,Lapped
+Fernando Alonso,Saudi Arabian Grand Prix,5,8.700479611211007,3.7004796112110068,Finished
+Logan Sargeant,Spanish Grand Prix,20,16.354983433230682,3.6450165667693177,Lapped
+Lando Norris,Dutch Grand Prix,1,4.622971993263124,3.622971993263124,Finished
+Alexander Albon,British Grand Prix,9,12.578753971063467,3.578753971063467,Finished
+George Russell,Singapore Grand Prix,4,7.577320874052796,3.5773208740527958,Finished
+George Russell,Canadian Grand Prix,3,6.558063481832473,3.5580634818324732,Finished
+Esteban Ocon,Miami Grand Prix,10,13.528548653984625,3.5285486539846254,Finished
+Fernando Alonso,São Paulo Grand Prix,14,10.473752493399793,3.526247506600207,Finished
+Fernando Alonso,Qatar Grand Prix,7,10.520566919020473,3.5205669190204727,Finished
+Logan Sargeant,British Grand Prix,11,14.51100684318674,3.51100684318674,Finished
+Liam Lawson,Las Vegas Grand Prix,16,12.49156240998702,3.5084375900129796,Finished
+Carlos Sainz,Abu Dhabi Grand Prix,2,5.506144578115092,3.5061445781150917,Finished
+Fernando Alonso,United States Grand Prix,13,9.531925050610369,3.4680749493896315,Lapped
+Yuki Tsunoda,São Paulo Grand Prix,7,10.452292099928831,3.4522920999288313,Finished
+Guanyu Zhou,United States Grand Prix,19,15.548171524722267,3.4518284752777326,Lapped
+Charles Leclerc,Qatar Grand Prix,2,5.441223221582323,3.441223221582323,Finished
+Charles Leclerc,Hungarian Grand Prix,4,7.42069203657864,3.4206920365786404,Finished
+Yuki Tsunoda,Canadian Grand Prix,14,10.587711039668257,3.4122889603317432,Finished
+Daniel Ricciardo,Canadian Grand Prix,8,11.382374531303439,3.382374531303439,Finished
+Esteban Ocon,Mexico City Grand Prix,13,9.633311308102511,3.3666886918974885,Lapped
+Lance Stroll,Chinese Grand Prix,15,11.644735640669396,3.3552643593306044,Finished
+Charles Leclerc,Belgian Grand Prix,3,6.35429427771314,3.35429427771314,Finished
+Oscar Piastri,Qatar Grand Prix,3,6.333649073407065,3.3336490734070647,Finished
+Pierre Gasly,Australian Grand Prix,13,16.32958812991196,3.3295881299119614,Lapped
+Guanyu Zhou,Belgian Grand Prix,19,15.67298852131163,3.3270114786883696,Retired
+Alexander Albon,Italian Grand Prix,9,12.304606356501077,3.3046063565010773,Finished
+Carlos Sainz,Austrian Grand Prix,3,6.2872614128169255,3.2872614128169255,Finished
+Lewis Hamilton,Hungarian Grand Prix,3,6.265210901216406,3.265210901216406,Finished
+Oscar Piastri,Azerbaijan Grand Prix,1,4.26195775360829,3.26195775360829,Finished
+Logan Sargeant,Saudi Arabian Grand Prix,14,17.25967056128657,3.259670561286569,Lapped
+Kevin Magnussen,Italian Grand Prix,10,13.256994419300575,3.2569944193005753,Finished
+Lewis Hamilton,Austrian Grand Prix,4,7.250589564320464,3.250589564320464,Finished
+Franco Colapinto,Azerbaijan Grand Prix,8,11.239530060670344,3.2395300606703437,Finished
+Pierre Gasly,Dutch Grand Prix,9,12.229824943521068,3.229824943521068,Lapped
+Esteban Ocon,Hungarian Grand Prix,18,14.813925643641848,3.1860743563581515,Lapped
+Nico Hülkenberg,Las Vegas Grand Prix,8,11.183864583493792,3.1838645834937918,Finished
+George Russell,Monaco Grand Prix,5,8.14719244683313,3.147192446833129,Finished
+Fernando Alonso,Canadian Grand Prix,6,9.13724838932741,3.137248389327411,Finished
+George Russell,Chinese Grand Prix,6,9.11240458773439,3.1124045877343907,Finished
+Kevin Magnussen,Qatar Grand Prix,9,12.110548660253572,3.1105486602535724,Finished
+Esteban Ocon,Belgian Grand Prix,9,12.100471825042312,3.1004718250423124,Finished
+Valtteri Bottas,Qatar Grand Prix,11,14.091099559066649,3.091099559066649,Finished
+Pierre Gasly,Austrian Grand Prix,10,13.080543405262858,3.0805434052628584,Finished
+Max Verstappen,Qatar Grand Prix,1,4.0673349921889965,3.0673349921889965,Finished
+Pierre Gasly,Monaco Grand Prix,10,13.048451416442097,3.048451416442097,Lapped
+Daniel Ricciardo,Belgian Grand Prix,10,12.998736583083295,2.9987365830832946,Finished
+Daniel Ricciardo,Australian Grand Prix,12,14.985255089487492,2.9852550894874916,Lapped
+Pierre Gasly,Abu Dhabi Grand Prix,7,9.972066696946866,2.9720666969468663,Finished
+Oscar Piastri,Australian Grand Prix,4,6.947926641156768,2.9479266411567684,Finished
+Valtteri Bottas,Canadian Grand Prix,13,15.947874225605535,2.947874225605535,Finished
+Kevin Magnussen,Australian Grand Prix,10,12.944152801127101,2.9441528011271014,Lapped
+George Russell,Spanish Grand Prix,4,6.9391017249103735,2.9391017249103735,Finished
+Carlos Sainz,Australian Grand Prix,1,3.900453143054142,2.900453143054142,Finished
+Kevin Magnussen,Abu Dhabi Grand Prix,16,13.138579742821708,2.861420257178292,Lapped
+Kevin Magnussen,Dutch Grand Prix,18,15.142328135198502,2.857671864801498,Lapped
+Max Verstappen,Chinese Grand Prix,1,3.8473886681223983,2.8473886681223983,Finished
+Esteban Ocon,Chinese Grand Prix,11,13.836142277523626,2.836142277523626,Finished
+Lando Norris,Singapore Grand Prix,1,3.831049395581438,2.831049395581438,Finished
+Fernando Alonso,British Grand Prix,8,10.830379349987673,2.8303793499876733,Finished
+Carlos Sainz,Las Vegas Grand Prix,3,5.8103056089894,2.8103056089894,Finished
+Nico Hülkenberg,Canadian Grand Prix,11,13.8099974542095,2.8099974542094994,Finished
+Charles Leclerc,Australian Grand Prix,2,4.808103516561456,2.808103516561456,Finished
+Valtteri Bottas,Emilia Romagna Grand Prix,18,15.201109686983676,2.798890313016324,Lapped
+Charles Leclerc,Monaco Grand Prix,1,3.7831443147105284,2.7831443147105284,Finished
+Kevin Magnussen,Spanish Grand Prix,17,14.236110083724062,2.7638899162759376,Lapped
+Yuki Tsunoda,Saudi Arabian Grand Prix,15,12.24738355319118,2.752616446808821,Lapped
+Carlos Sainz,Dutch Grand Prix,5,7.745233058861487,2.745233058861487,Finished
+Yuki Tsunoda,Hungarian Grand Prix,9,11.739700985884301,2.7397009858843013,Finished
+Pierre Gasly,Azerbaijan Grand Prix,12,14.718298338577364,2.7182983385773642,Finished
+Max Verstappen,Singapore Grand Prix,2,4.69481246483442,2.6948124648344196,Finished
+Daniel Ricciardo,Saudi Arabian Grand Prix,16,13.306027652349455,2.6939723476505453,Lapped
+Yuki Tsunoda,Monaco Grand Prix,8,10.69232221635251,2.69232221635251,Lapped
+Charles Leclerc,Azerbaijan Grand Prix,2,4.6841763566185275,2.6841763566185275,Finished
+Yuki Tsunoda,British Grand Prix,10,12.666032212044524,2.6660322120445237,Finished
+Kevin Magnussen,Emilia Romagna Grand Prix,12,14.651991639920087,2.6519916399200874,Lapped
+Lando Norris,Hungarian Grand Prix,2,4.628498389255543,2.628498389255543,Finished
+Pierre Gasly,Spanish Grand Prix,9,11.62428106919508,2.6242810691950798,Finished
+George Russell,Japanese Grand Prix,7,9.607602041023558,2.607602041023558,Finished
+Esteban Ocon,Saudi Arabian Grand Prix,13,15.605838427467253,2.605838427467253,Lapped
+Alexander Albon,United States Grand Prix,16,13.394189756780355,2.6058102432196453,Lapped
+Nico Hülkenberg,Abu Dhabi Grand Prix,8,10.559747089188546,2.559747089188546,Finished
+Valtteri Bottas,Monaco Grand Prix,13,15.554142020149774,2.554142020149774,Lapped
+Logan Sargeant,Austrian Grand Prix,19,16.455504225236893,2.5444957747631065,Lapped
+Sergio Pérez,United States Grand Prix,7,9.542633766887727,2.542633766887727,Finished
+Alexander Albon,Saudi Arabian Grand Prix,11,13.461569774641912,2.4615697746419123,Finished
+Nico Hülkenberg,Qatar Grand Prix,16,13.552115366982596,2.447884633017404,Retired
+Max Verstappen,Emilia Romagna Grand Prix,1,3.4362162819773396,2.4362162819773396,Finished
+Nico Hülkenberg,Mexico City Grand Prix,9,11.42707075151817,2.427070751518171,Lapped
+Lando Norris,Emilia Romagna Grand Prix,2,4.417743690126553,2.417743690126553,Finished
+Franco Colapinto,United States Grand Prix,10,12.41379134884079,2.4137913488407907,Finished
+Alexander Albon,Spanish Grand Prix,18,15.590581314548402,2.409418685451598,Lapped
+Max Verstappen,Canadian Grand Prix,1,3.4063990084595273,2.4063990084595273,Finished
+Guanyu Zhou,Japanese Grand Prix,18,15.613775144843471,2.386224855156529,Retired
+Kevin Magnussen,Chinese Grand Prix,16,13.66636911661392,2.33363088338608,Finished
+Oscar Piastri,Italian Grand Prix,2,4.3313171000925745,2.3313171000925745,Finished
+Pierre Gasly,Singapore Grand Prix,17,14.677055248915993,2.322944751084007,Lapped
+Max Verstappen,Spanish Grand Prix,1,3.317475131600852,2.317475131600852,Finished
+Lando Norris,São Paulo Grand Prix,6,3.6929145422613807,2.3070854577386193,Finished
+Kevin Magnussen,British Grand Prix,12,14.294716438362622,2.294716438362622,Finished
+Lewis Hamilton,Monaco Grand Prix,7,9.287476653269097,2.2874766532690973,Finished
+Yuki Tsunoda,Las Vegas Grand Prix,9,11.28218390247635,2.2821839024763495,Finished
+George Russell,Mexico City Grand Prix,5,7.278354425549453,2.2783544255494528,Finished
+Carlos Sainz,Italian Grand Prix,4,6.257335314666574,2.257335314666574,Finished
+George Russell,São Paulo Grand Prix,4,6.253528253603143,2.253528253603143,Finished
+Lance Stroll,Mexico City Grand Prix,11,13.248889517945926,2.2488895179459263,Lapped
+Lando Norris,Canadian Grand Prix,2,4.247588839559616,2.247588839559616,Finished
+Max Verstappen,Belgian Grand Prix,4,6.240128986724913,2.240128986724913,Finished
+Valtteri Bottas,Las Vegas Grand Prix,18,15.760474749079673,2.2395252509203267,Lapped
+Valtteri Bottas,Hungarian Grand Prix,16,13.793288388262404,2.206711611737596,Lapped
+Valtteri Bottas,Spanish Grand Prix,16,13.823444625864266,2.1765553741357344,Lapped
+Lando Norris,British Grand Prix,3,5.161915223965191,2.161915223965191,Finished
+Oscar Piastri,British Grand Prix,4,6.154203162238642,2.154203162238642,Finished
+Logan Sargeant,Hungarian Grand Prix,17,14.852220198481334,2.1477798015186664,Lapped
+George Russell,Hungarian Grand Prix,8,10.142248305627005,2.142248305627005,Finished
+Fernando Alonso,Belgian Grand Prix,8,10.107530948623209,2.107530948623209,Finished
+Max Verstappen,Dutch Grand Prix,2,4.1072387723240595,2.1072387723240595,Finished
+Sergio Pérez,Dutch Grand Prix,6,8.107201779295723,2.107201779295723,Finished
+Max Verstappen,British Grand Prix,2,4.095427681813335,2.0954276818133346,Finished
+Lance Stroll,Dutch Grand Prix,13,10.914229731193947,2.085770268806053,Lapped
+Lance Stroll,United States Grand Prix,15,12.921403070267118,2.078596929732882,Lapped
+Max Verstappen,Austrian Grand Prix,5,2.936871381198764,2.063128618801236,Finished
+Lando Norris,Mexico City Grand Prix,2,4.045605623625773,2.0456056236257734,Finished
+Valtteri Bottas,United States Grand Prix,17,14.979963944570015,2.020036055429985,Lapped
+Pierre Gasly,Chinese Grand Prix,13,14.94716213450941,1.9471621345094103,Finished
+Carlos Sainz,British Grand Prix,5,6.900650781696454,1.900650781696454,Finished
+Oscar Piastri,Canadian Grand Prix,5,6.862928067386578,1.8629280673865782,Finished
+Pierre Gasly,Mexico City Grand Prix,10,11.861785526415145,1.8617855264151455,Lapped
+Fernando Alonso,Spanish Grand Prix,12,10.142986520023845,1.857013479976155,Lapped
+Guanyu Zhou,Italian Grand Prix,18,16.144524926636258,1.855475073363742,Lapped
+Fernando Alonso,Japanese Grand Prix,6,7.8531074234369305,1.8531074234369305,Finished
+Sergio Pérez,Japanese Grand Prix,2,3.8476180204728476,1.8476180204728476,Finished
+Sergio Pérez,Las Vegas Grand Prix,10,11.83456384383226,1.8345638438322602,Finished
+Pierre Gasly,Miami Grand Prix,12,13.823444625864266,1.8234446258642656,Finished
+Nico Hülkenberg,Hungarian Grand Prix,13,11.192593165294078,1.8074068347059224,Lapped
+Sergio Pérez,Austrian Grand Prix,7,8.796134333583037,1.796134333583037,Finished
+Esteban Ocon,Spanish Grand Prix,10,11.779252665610047,1.7792526656100467,Finished
+Alexander Albon,Chinese Grand Prix,12,13.758371216377398,1.7583712163773981,Finished
+Kevin Magnussen,Canadian Grand Prix,12,13.758371216377398,1.7583712163773981,Finished
+Charles Leclerc,Saudi Arabian Grand Prix,3,4.737844097508147,1.7378440975081473,Finished
+Alexander Albon,Australian Grand Prix,11,12.737820072197202,1.7378200721972021,Lapped
+Lance Stroll,Belgian Grand Prix,11,12.732633054017818,1.7326330540178176,Finished
+Max Verstappen,Mexico City Grand Prix,6,4.300166077159745,1.6998339228402548,Finished
+Fernando Alonso,Singapore Grand Prix,8,9.691842076289873,1.6918420762898734,Lapped
+Yuki Tsunoda,United States Grand Prix,14,12.310341600853643,1.6896583991463565,Lapped
+Esteban Ocon,Australian Grand Prix,16,14.31388114487029,1.6861188551297097,Lapped
+George Russell,Abu Dhabi Grand Prix,5,6.675041539903956,1.6750415399039564,Finished
+Oscar Piastri,São Paulo Grand Prix,8,6.333460093796351,1.6665399062036492,Finished
+Nico Hülkenberg,Spanish Grand Prix,11,12.628347937502198,1.6283479375021983,Finished
+Max Verstappen,Abu Dhabi Grand Prix,6,4.372155331470372,1.6278446685296277,Finished
+Oscar Piastri,Singapore Grand Prix,3,4.619668988379829,1.6196689883798294,Finished
+Nico Hülkenberg,Singapore Grand Prix,9,10.60746221265532,1.6074622126553209,Lapped
+Carlos Sainz,Monaco Grand Prix,3,4.584312201689055,1.5843122016890554,Finished
+Pierre Gasly,Emilia Romagna Grand Prix,16,14.434506095277742,1.565493904722258,Lapped
+Charles Leclerc,Mexico City Grand Prix,3,4.564652967369594,1.564652967369594,Finished
+Esteban Ocon,British Grand Prix,16,14.44483609305138,1.5551639069486196,Lapped
+Fernando Alonso,Las Vegas Grand Prix,11,12.528822746656775,1.5288227466567754,Finished
+Guanyu Zhou,Miami Grand Prix,14,15.522671275419267,1.5226712754192668,Finished
+Daniel Ricciardo,Monaco Grand Prix,12,13.513266181959391,1.5132661819593913,Lapped
+Charles Leclerc,Japanese Grand Prix,4,5.499405638348312,1.4994056383483123,Finished
+Yuki Tsunoda,Japanese Grand Prix,10,11.49072690533483,1.4907269053348298,Lapped
+Sergio Pérez,Emilia Romagna Grand Prix,8,6.520789400836834,1.4792105991631663,Finished
+Pierre Gasly,Italian Grand Prix,15,13.5245493027625,1.4754506972375,Lapped
+George Russell,Emilia Romagna Grand Prix,7,8.459907638564204,1.4599076385642036,Finished
+Lance Stroll,Monaco Grand Prix,14,12.549823904833124,1.450176095166876,Lapped
+Yuki Tsunoda,Belgian Grand Prix,16,14.55367232093753,1.4463276790624704,Finished
+Fernando Alonso,Miami Grand Prix,9,10.436149055079376,1.436149055079376,Finished
+Liam Lawson,São Paulo Grand Prix,9,10.409650748309257,1.4096507483092573,Finished
+Guanyu Zhou,Abu Dhabi Grand Prix,13,14.40734849924531,1.4073484992453107,Lapped
+Max Verstappen,United States Grand Prix,3,4.406908547406793,1.4069085474067933,Finished
+Fernando Alonso,Abu Dhabi Grand Prix,9,10.404242362850878,1.4042423628508782,Finished
+Carlos Sainz,Singapore Grand Prix,7,8.38661338223216,1.3866133822321594,Finished
+Guanyu Zhou,Spanish Grand Prix,13,14.354089461672773,1.354089461672773,Lapped
+Lando Norris,Spanish Grand Prix,2,3.3503820770124926,1.3503820770124926,Finished
+Esteban Ocon,Dutch Grand Prix,15,13.65011744373169,1.3498825562683106,Lapped
+Sergio Pérez,Saudi Arabian Grand Prix,2,3.347165978676264,1.347165978676264,Finished
+Max Verstappen,Miami Grand Prix,2,3.3394201291168133,1.3394201291168133,Finished
+Charles Leclerc,Emilia Romagna Grand Prix,3,4.336882957086496,1.3368829570864964,Finished
+Guanyu Zhou,Azerbaijan Grand Prix,14,15.334432289050488,1.334432289050488,Finished
+Kevin Magnussen,Hungarian Grand Prix,15,13.674420811443515,1.3255791885564854,Lapped
+Charles Leclerc,Singapore Grand Prix,5,6.317205396498225,1.3172053964982249,Finished
+Lando Norris,Italian Grand Prix,3,4.313180585981973,1.3131805859819732,Finished
+Max Verstappen,Monaco Grand Prix,6,4.693029942519287,1.3069700574807133,Finished
+Guanyu Zhou,Austrian Grand Prix,17,15.698212610128687,1.301787389871313,Lapped
+George Russell,Qatar Grand Prix,4,5.3010084893839045,1.3010084893839045,Finished
+Yuki Tsunoda,Austrian Grand Prix,14,12.704003447457263,1.2959965525427375,Lapped
+Lewis Hamilton,Japanese Grand Prix,9,10.291495389128958,1.2914953891289578,Finished
+Lance Stroll,Spanish Grand Prix,14,12.730752529539371,1.2692474704606287,Lapped
+Sergio Pérez,Spanish Grand Prix,8,9.259525577972388,1.2595255779723882,Finished
+Nico Hülkenberg,Chinese Grand Prix,10,11.22381739932738,1.2238173993273804,Finished
+Oscar Piastri,Japanese Grand Prix,8,6.779440040092814,1.2205599599071864,Finished
+Fernando Alonso,Hungarian Grand Prix,11,9.790951210360461,1.2090487896395388,Finished
+Charles Leclerc,Miami Grand Prix,3,4.172007377738191,1.1720073777381907,Finished
+Charles Leclerc,Chinese Grand Prix,4,5.166963358100207,1.1669633581002072,Finished
+Alexander Albon,Dutch Grand Prix,14,15.154260325148586,1.1542603251485861,Lapped
+Guanyu Zhou,Las Vegas Grand Prix,13,14.142012687485378,1.1420126874853782,Finished
+Guanyu Zhou,Singapore Grand Prix,15,16.13884845838179,1.1388484583817906,Lapped
+Carlos Sainz,Belgian Grand Prix,6,7.121013460590976,1.1210134605909756,Finished
+Lando Norris,Japanese Grand Prix,5,6.100588742853182,1.1005887428531818,Finished
+Nico Hülkenberg,Japanese Grand Prix,11,12.096814902823514,1.096814902823514,Lapped
+Nico Hülkenberg,Azerbaijan Grand Prix,11,12.077102276181842,1.0771022761818418,Finished
+Lewis Hamilton,Italian Grand Prix,5,6.052911366140504,1.0529113661405036,Finished
+Esteban Ocon,Emilia Romagna Grand Prix,14,12.94736889946333,1.0526311005366704,Lapped
+Oscar Piastri,Chinese Grand Prix,8,6.947926641156768,1.0520733588432316,Finished
+Fernando Alonso,Australian Grand Prix,8,9.047331178247523,1.0473311782475232,Finished
+Oscar Piastri,Spanish Grand Prix,7,8.037954140871136,1.0379541408711361,Finished
+Logan Sargeant,Belgian Grand Prix,17,15.980410930348967,1.0195890696510332,Finished
+Valtteri Bottas,Azerbaijan Grand Prix,16,14.98247696437017,1.0175230356298304,Lapped
+Carlos Sainz,Miami Grand Prix,5,3.9864252234504143,1.0135747765495857,Finished
+Max Verstappen,Hungarian Grand Prix,5,3.98662631210304,1.01337368789696,Finished
+Daniel Ricciardo,Dutch Grand Prix,12,13.004365252603217,1.0043652526032165,Lapped
+Charles Leclerc,Las Vegas Grand Prix,4,4.979445452593532,0.9794454525935317,Finished
+Valtteri Bottas,Saudi Arabian Grand Prix,17,16.045484339835834,0.9545156601641658,Lapped
+Kevin Magnussen,United States Grand Prix,11,11.952865445520532,0.9528654455205317,Finished
+Oliver Bearman,Azerbaijan Grand Prix,10,9.047331178247523,0.9526688217524768,Finished
+Daniel Ricciardo,Miami Grand Prix,15,15.951525005984335,0.951525005984335,Finished
+Lance Stroll,Japanese Grand Prix,12,12.916219327640253,0.9162193276402526,Lapped
+Guanyu Zhou,Mexico City Grand Prix,15,15.888355335601858,0.8883553356018581,Lapped
+Guanyu Zhou,São Paulo Grand Prix,15,15.866452384080505,0.866452384080505,Finished
+Lance Stroll,Abu Dhabi Grand Prix,14,13.147793375741973,0.8522066242580273,Lapped
+George Russell,Saudi Arabian Grand Prix,6,6.8372486345989,0.8372486345989003,Finished
+Guanyu Zhou,Monaco Grand Prix,16,15.16619251509867,0.8338074849013299,Lapped
+Oscar Piastri,Dutch Grand Prix,4,4.833198748697351,0.8331987486973507,Finished
+Valtteri Bottas,Australian Grand Prix,14,14.831298118385101,0.8312981183851011,Lapped
+Lance Stroll,Hungarian Grand Prix,10,10.82896094048316,0.8289609404831602,Finished
+Logan Sargeant,Japanese Grand Prix,17,16.174046007619506,0.8259539923804944,Lapped
+Sergio Pérez,Australian Grand Prix,5,4.199477348904643,0.8005226510953571,Finished
+Sergio Pérez,Italian Grand Prix,8,8.791351729475013,0.7913517294750125,Finished
+Kevin Magnussen,Japanese Grand Prix,13,13.786482938035409,0.7864829380354088,Lapped
+Guanyu Zhou,Canadian Grand Prix,15,15.779634451653717,0.7796344516537168,Lapped
+Lewis Hamilton,Azerbaijan Grand Prix,9,9.779506546625836,0.7795065466258357,Finished
+Guanyu Zhou,Chinese Grand Prix,14,14.778922360557594,0.7789223605575941,Finished
+Lando Norris,Saudi Arabian Grand Prix,8,7.232030431232896,0.7679695687671044,Finished
+Esteban Ocon,Singapore Grand Prix,13,13.760883610824845,0.7608836108248447,Lapped
+Carlos Sainz,Spanish Grand Prix,6,6.756884568669451,0.7568845686694514,Finished
+Valtteri Bottas,Miami Grand Prix,16,15.249359667146656,0.7506403328533438,Finished
+Valtteri Bottas,Mexico City Grand Prix,14,14.713848085694998,0.7138480856949982,Lapped
+Nico Hülkenberg,Dutch Grand Prix,11,11.713638822241982,0.7136388222419825,Lapped
+Kevin Magnussen,Las Vegas Grand Prix,12,12.706373005367531,0.7063730053675314,Finished
+Carlos Sainz,Qatar Grand Prix,6,6.703612048820902,0.7036120488209017,Finished
+Franco Colapinto,Mexico City Grand Prix,12,12.680947681960378,0.6809476819603777,Lapped
+Pierre Gasly,United States Grand Prix,12,11.331670035865246,0.6683299641347542,Finished
+Alexander Albon,Belgian Grand Prix,12,12.66294088528948,0.6629408852894798,Finished
+Kevin Magnussen,Saudi Arabian Grand Prix,12,12.660049011050974,0.6600490110509742,Finished
+Sergio Pérez,Chinese Grand Prix,3,3.6514790625046705,0.6514790625046705,Finished
+Lance Stroll,Austrian Grand Prix,13,13.651418038331974,0.6514180383319736,Lapped
+Charles Leclerc,Spanish Grand Prix,5,5.649706170512476,0.6497061705124763,Finished
+Valtteri Bottas,Belgian Grand Prix,15,14.363815678999416,0.6361843210005844,Finished
+Daniel Ricciardo,British Grand Prix,13,13.63020899736533,0.6302089973653295,Lapped
+Logan Sargeant,Emilia Romagna Grand Prix,17,16.39117091835292,0.6088290816470803,Lapped
+Lando Norris,Las Vegas Grand Prix,6,5.401506352577211,0.5984936474227887,Finished
+Oliver Bearman,São Paulo Grand Prix,12,11.406925824821393,0.5930741751786073,Finished
+Oscar Piastri,Mexico City Grand Prix,8,8.574885970487452,0.5748859704874523,Finished
+George Russell,Miami Grand Prix,8,8.565867482388414,0.5658674823884144,Finished
+Esteban Ocon,Japanese Grand Prix,15,14.434506095277742,0.565493904722258,Lapped
+Max Verstappen,Azerbaijan Grand Prix,5,5.548349747311609,0.548349747311609,Finished
+Yuki Tsunoda,Emilia Romagna Grand Prix,10,10.54331231446012,0.5433123144601204,Lapped
+Logan Sargeant,Chinese Grand Prix,17,16.458149797695633,0.5418502023043672,Finished
+Lance Stroll,Las Vegas Grand Prix,15,14.459674948426454,0.5403250515735465,Finished
+Valtteri Bottas,São Paulo Grand Prix,13,13.53934083578814,0.5393408357881402,Finished
+Alexander Albon,Hungarian Grand Prix,14,13.468088082513615,0.5319119174863847,Lapped
+Lewis Hamilton,Saudi Arabian Grand Prix,9,8.47912359809527,0.5208764019047294,Finished
+Alexander Albon,Qatar Grand Prix,15,14.482842936830213,0.5171570631697868,Lapped
+Sergio Pérez,Belgian Grand Prix,7,7.496681157492428,0.4966811574924277,Finished
+Sergio Pérez,Singapore Grand Prix,10,10.483883035304908,0.48388303530490795,Lapped
+Valtteri Bottas,Austrian Grand Prix,16,15.528067366321025,0.47193263367897487,Lapped
+Lando Norris,United States Grand Prix,4,3.5429164177712043,0.45708358222879575,Finished
+Carlos Sainz,Chinese Grand Prix,5,4.551370966806926,0.44862903319307357,Finished
+Lando Norris,Monaco Grand Prix,4,4.430127358074728,0.4301273580747278,Finished
+Alexander Albon,Austrian Grand Prix,15,14.5707702729711,0.4292297270289005,Lapped
+George Russell,Dutch Grand Prix,7,7.427563221062758,0.42756322106275757,Finished
+Pierre Gasly,Japanese Grand Prix,16,15.605838427467253,0.394161572532747,Lapped
+Carlos Sainz,Emilia Romagna Grand Prix,5,4.613410663695337,0.3865893363046631,Finished
+Nico Hülkenberg,Emilia Romagna Grand Prix,11,11.379370970608859,0.3793709706088588,Lapped
+Franco Colapinto,Las Vegas Grand Prix,14,14.369645223432524,0.36964522343252426,Finished
+Valtteri Bottas,Japanese Grand Prix,14,14.348798316755296,0.34879831675529616,Lapped
+Franco Colapinto,Singapore Grand Prix,11,11.335184783042372,0.3351847830423722,Lapped
+Daniel Ricciardo,Spanish Grand Prix,15,14.677513369681208,0.3224866303187923,Lapped
+Daniel Ricciardo,Azerbaijan Grand Prix,13,13.319560935203473,0.31956093520347295,Finished
+Carlos Sainz,Japanese Grand Prix,3,3.314259033264624,0.3142590332646238,Finished
+Daniel Ricciardo,Italian Grand Prix,13,12.690966831713853,0.30903316828614713,Finished
+George Russell,Italian Grand Prix,7,7.302648027888802,0.30264802788880196,Finished
+Yuki Tsunoda,Singapore Grand Prix,12,11.708296812429193,0.29170318757080693,Lapped
+Max Verstappen,Italian Grand Prix,6,5.711754538846643,0.28824546115335714,Finished
+Kevin Magnussen,Belgian Grand Prix,14,14.282063471536665,0.2820634715366648,Finished
+Esteban Ocon,Italian Grand Prix,14,13.71972921597995,0.28027078402005046,Lapped
+Yuki Tsunoda,Abu Dhabi Grand Prix,12,12.278776139648766,0.278776139648766,Lapped
+Sergio Pérez,Miami Grand Prix,4,4.269481458766817,0.2694814587668173,Finished
+Guanyu Zhou,Australian Grand Prix,15,15.269358879563619,0.2693588795636188,Lapped
+Logan Sargeant,Monaco Grand Prix,15,15.218568272926177,0.2185682729261771,Lapped
+Lando Norris,Belgian Grand Prix,5,5.211733158309467,0.2117331583094666,Finished
+Daniel Ricciardo,Emilia Romagna Grand Prix,13,12.790195830024711,0.20980416997528906,Lapped
+Fernando Alonso,Monaco Grand Prix,11,11.192805702935726,0.19280570293572552,Lapped
+Sergio Pérez,São Paulo Grand Prix,11,10.814952660343415,0.1850473396565846,Finished
+Esteban Ocon,Austrian Grand Prix,12,12.183071726765327,0.18307172676532701,Finished
+Liam Lawson,Qatar Grand Prix,14,13.818896229222775,0.1811037707772254,Finished
+Oscar Piastri,Las Vegas Grand Prix,7,6.8332795647398274,0.16672043526017255,Finished
+Valtteri Bottas,Singapore Grand Prix,16,15.833457912351408,0.16654208764859213,Lapped
+Valtteri Bottas,Italian Grand Prix,16,15.836296146478642,0.1637038535213584,Lapped
+Esteban Ocon,Azerbaijan Grand Prix,15,15.150802849521234,0.15080284952123435,Lapped
+Max Verstappen,Saudi Arabian Grand Prix,1,1.1490406053505895,0.1490406053505895,Finished
+Yuki Tsunoda,Qatar Grand Prix,13,13.13466334832796,0.13466334832796,Finished
+Guanyu Zhou,Emilia Romagna Grand Prix,15,14.882088725022545,0.11791127497745535,Lapped
+Nico Hülkenberg,Miami Grand Prix,11,11.107329675573478,0.10732967557347806,Finished
+Max Verstappen,Las Vegas Grand Prix,5,4.896147995454885,0.10385200454511523,Finished
+Lewis Hamilton,São Paulo Grand Prix,10,10.102250448893358,0.10225044889335777,Finished
+Fernando Alonso,Dutch Grand Prix,10,9.900523368783075,0.09947663121692507,Lapped
+Oscar Piastri,United States Grand Prix,5,4.903566992383198,0.09643300761680162,Finished
+Daniel Ricciardo,Hungarian Grand Prix,12,11.906395923889205,0.09360407611079502,Lapped
+Charles Leclerc,São Paulo Grand Prix,5,5.067828895571012,0.06782889557101157,Finished
+Lewis Hamilton,Dutch Grand Prix,8,7.9339495382817375,0.06605046171826245,Finished
+Fernando Alonso,Chinese Grand Prix,7,7.058604647714637,0.05860464771463736,Finished
+Pierre Gasly,Belgian Grand Prix,13,13.052535663744091,0.052535663744091465,Finished
+Valtteri Bottas,British Grand Prix,15,14.95985978616877,0.04014021383122923,Lapped
+Logan Sargeant,Dutch Grand Prix,16,15.973451798594692,0.026548201405308447,Lapped
+Lewis Hamilton,Singapore Grand Prix,6,6.021509175903883,0.02150917590388257,Finished
+Carlos Sainz,Hungarian Grand Prix,6,6.016638337919297,0.016638337919297363,Finished
+Fernando Alonso,Italian Grand Prix,11,11.010407096270551,0.010407096270551364,Finished
+Lance Stroll,Singapore Grand Prix,14,13.998917413303522,0.001082586696478316,Lapped

@@ -91,7 +91,10 @@ both_recent_mae <- mean(
 
 both_recent_rmse <- sqrt(
     mean(
-        (validation_data$position - validation_data$both_recent_prediction)^2
+        (
+            validation_data$position - 
+            validation_data$both_recent_prediction
+        )^2
     )
 )
 
@@ -109,5 +112,15 @@ log_recent_points_rmse <- sqrt(
             validation_data$position -
                 validation_data$log_recent_points_prediction
         )^2
+    )
+)
+
+recent_points_test_mae <- mean(
+    abs(test_data$position - recent_points_test_prediction)
+)
+
+recent_points_test_rmse <- sqrt(
+    mean(
+        (test_data$position - recent_points_test_prediction)^2
     )
 )

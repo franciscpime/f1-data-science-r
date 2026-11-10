@@ -124,3 +124,67 @@ write_csv(
     validation_mae_by_status,
     "../../results/validation_mae_by_status.csv"
 )
+
+# Errors 2024
+validation_errors_2024 <- tibble(
+    Driver = validation_data$driver,
+    Race = validation_data$raceName,
+    Actual = validation_data$position,
+    Linear_Predicted = validation_data$recent_points_prediction,
+    Linear_Error = abs(
+        validation_data$position - 
+        validation_data$recent_points_prediction
+    ),
+    Status = validation_data$status
+) |> arrange(desc(Linear_Error))
+
+write_csv(
+    validation_errors_2024,
+    "../../results/validation_errors_2024.csv"
+)
+
+erros_by_status_2024 <- validation_errors_2024 |>
+    group_by(Status) |>
+    summarise(
+        Count = n(),
+        Linear_MAE = mean(Linear_Error)
+    ) |> arrange(desc(Linear_MAE))
+
+
+
+# Errors 2025
+test_errors_2025 <- tibble(
+    Driver = test_data$driver,
+    Race = test_data$raceName,
+    Actual = test_data$position,
+    Grid = test_data$grid,
+    Linear_Predicted = recent_points_test_prediction,
+    RF_Predicted = random_forest_test_prediction,
+    Linear_Error = abs(test_data$position - recent_points_test_prediction),
+    RF_Error = abs(test_data$position - random_forest_test_prediction),
+    Status = test_data$status
+) |> arrange(desc(Linear_Error))
+
+write_csv(
+    test_errors_2025,
+    "../../results/test_errors_2025.csv"
+)
+
+errors_by_grid <- test_errors_2025 |>
+    
+
+errors_by_status_2025 <- test_errors_2025 |>
+    group_by(Status) |>
+    summarise(
+        Count = n(),
+        Linear_MAE = mean(Linear_Error),
+        RF_MAE = mean(RF_Error)
+    ) |>
+    arrange(desc(Linear_MAE))
+
+errors_by_status_long_2025 <- errors_by_status_2025 |>
+    pivot_longer(
+        cols = c(Linear_MAE, RF_MAE),
+        names_to = "Models",
+        values_to = "Errors"
+    )

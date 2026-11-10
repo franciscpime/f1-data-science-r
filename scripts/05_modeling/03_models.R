@@ -86,6 +86,13 @@ validation_data <- validation_data |>
         )
     )
 
+recent_points_test_prediction <- predict(
+    recent_points_model,
+    newdata=test_data
+)
+
+
+
 save(
     model,
     tree_model,
@@ -97,5 +104,6 @@ save(
     recent_points_model,
     both_recent_model,
     log_recent_points_model,
+    recent_points_test_prediction,
     file = "../../data/processed/model_results.RData"
 )

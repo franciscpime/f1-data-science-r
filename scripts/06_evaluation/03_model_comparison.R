@@ -26,9 +26,10 @@ write_csv(
     models_performance,
     "../../results/models_performance.csv"
 )
-# Linear Regression Model Comparison
+
+# Model Comparison: 2024 Validation
 # Collect MAE and RMSE for all linear regression variants
-mae <- c(
+mae_2024 <- c(
     linear_regression_mae,
     improved_model_mae,
     recent_model_mae,
@@ -38,7 +39,7 @@ mae <- c(
     random_forest_mae
 )
 
-rmse <- c(
+rmse_2024 <- c(
     linear_regression_rmse,
     improved_model_rmse,
     recent_model_rmse,
@@ -49,7 +50,7 @@ rmse <- c(
 )
 
 # Create a comparison table
-comparation_models <- tibble(
+comparison_models_2024 <- tibble(
     Model = c(
         "Original", 
         "Improved", 
@@ -59,19 +60,45 @@ comparation_models <- tibble(
         "Log",
         "Random Forest"
     ),
-    MAE = num(mae, digits=4),
-    RMSE = num(rmse, digits=4)
+    MAE = num(mae_2024, digits=4),
+    RMSE = num(rmse_2024, digits=4)
 ) |> arrange(MAE)
 
 # Export model comparison results
 write_csv(
-    comparation_models,
+    comparison_models_2024,
     "../../results/models_comparison_validation.csv"
 )
 
 save(
-    comparation_models,
+    comparison_models_2024,
     file="../../data/processed/model_comparison.RData"
+)
+
+# Model Comparison: 2025 Validation
+
+mae_2025 <- c(
+    recent_points_test_mae,
+    random_forest_test_mae
+)
+
+rmse_2025 <- c(
+    recent_points_test_rmse,
+    random_forest_test_rmse
+) 
+
+comparison_models_2025 <- tibble(
+    Model = c(
+        "Recent Points Test",
+        "Random Forest"
+    ),
+    MAE = num(mae_2025, digits=4),
+    RMSE = num(rmse_2025, digits=4)
+) |> arrange(MAE)
+
+save(
+    comparison_models_2025,
+    file = "../../data/processed/test_model_comparison.RData"
 )
 
 # Actual vs Predicted Finishing Positions
