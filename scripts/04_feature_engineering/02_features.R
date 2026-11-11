@@ -48,6 +48,7 @@ prev_avg_position_vs_position <- ggplot(
     geom_point(alpha = 0.15, color = "steelblue") +
     geom_smooth(method = "lm", se = FALSE, color = "red") +
     scale_y_reverse(breaks = 1:20) +
+    coord_cartesian(xlim = c(0, 30)) +
     labs(
         title = "Previous Average Position vs Finishing Position",
         x = "Previous Average Finishing Position",
@@ -69,6 +70,7 @@ prev_avg_points_vs_position <- ggplot(
     geom_point(alpha = 0.15, color = "steelblue") +
     geom_smooth(method = "lm", se = FALSE, color = "red") +
     scale_y_reverse(breaks = 1:20) +
+    coord_cartesian(xlim = c(0, 40)) +
     labs(
         title = "Previous Average Points vs Finishing Position",
         x = "Previous Average Points",

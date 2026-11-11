@@ -38,11 +38,13 @@ position_distribution <- ggplot(
         color = "white"
     ) +
     scale_x_continuous(breaks = 1:20) +
+    scale_y_continuous(breaks = seq(0, 120, by=5)) +
     labs(
         title = "Distribution of Finishing Positions",
         x = "Finishing Position",
         y = "Number of Observations"
     ) +
+    coord_cartesian(xlim = c(0, 30), ylim = c(0, 120)) +
     theme_minimal() +
     theme(
         plot.title = element_text(
@@ -60,9 +62,29 @@ ggsave(
 )
 
 # Compare starting grid positions with finishing positions
-grid_vs_position <- ggplot(f1_data, aes(x = grid, y = position)) +
-    geom_col() +
-    labs(title = "Grid vs Position")
+grid_vs_position <- ggplot(
+    f1_data,
+    aes(x = grid, y = position)
+) +
+    geom_jitter(
+        width = 0.2,
+        height = 0.2,
+        alpha = 0.3
+    ) +
+    geom_smooth(
+        method = "lm",
+        se = FALSE,
+        color = "red"
+    ) +
+    coord_cartesian(
+    xlim = c(0, 30)
+    ) +
+    labs(
+        title = "Starting Grid vs Finishing Position",
+        x = "Starting Grid Position",
+        y = "Finishing Position"
+    ) +
+    theme_minimal()
 
 ggsave(
     "../../plots/grid_vs_position.png",

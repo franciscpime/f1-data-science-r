@@ -123,7 +123,7 @@ models_actual_vs_predicted_2024_graph <- ggplot(
     theme_minimal()
 
 ggsave(
-    "../../plots/models_actual_vs_predicted_2024.png",
+    "../../plots/models_actual_vs_predicted_2024_graph.png",
     plot = models_actual_vs_predicted_2024_graph,
     width = 12,
     height = 9,
