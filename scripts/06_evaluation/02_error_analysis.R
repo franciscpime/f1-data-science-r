@@ -21,6 +21,7 @@ prediction_errors <- bind_rows(
             Driver = driver,
             Race = raceName,
             Grid = grid,
+            Team = team,
             Status = status,
             Actual = position,
             Predicted = predicted_position
@@ -33,6 +34,7 @@ prediction_errors <- bind_rows(
             Driver = driver,
             Race = raceName,
             Grid = grid,
+            Team = team,
             Status = status,
             Actual = position,
             Predicted = improved_prediction
@@ -45,6 +47,7 @@ prediction_errors <- bind_rows(
             Driver = driver,
             Race = raceName,
             Grid = grid,
+            Team = team,
             Status = status,
             Actual = position,
             Predicted = recent_points_prediction
@@ -57,6 +60,7 @@ prediction_errors <- bind_rows(
             Driver = driver,
             Race = raceName,
             Grid = grid,
+            Team = team,
             Status = status,
             Actual = position,
             Predicted = recent_points_test_prediction
@@ -69,6 +73,7 @@ prediction_errors <- bind_rows(
             Driver = driver,
             Race = raceName,
             Grid = grid,
+            Team = team,
             Status = status,
             Actual = position,
             Predicted = random_forest_test_prediction
@@ -197,6 +202,36 @@ prediction_outliers <- prediction_errors |>
     ungroup() |>
     arrange(Year, Model, desc(Absolute_Error))
 
+
+#################################################################
+#                     ERRORS BY TEAM                       #
+# Identifies the 10 biggest prediction mistakes for each model  #
+# and year, helping us understand unusual race results.         #
+#################################################################
+
+errors_by_team <- prediction_errors |>
+    group_by(Year, Dataset, Model, Team) |>
+    summarise(
+        Count = n(),
+        MAE = mean(Absolute_Error),
+        .groups = "drop"
+    ) |>
+    arrange(Year, Model, desc(MAE))
+
+
+errors_by_result_group <- prediction_errors |>
+    mutate(Group = case_when(
+        Status %in% c("Finished", "Lapped") ~ "Completed",
+        Status %in% c("Retired", "Disqualified") ~ "Not completed",
+        Status == "Did not start" ~ "Did not start"
+    )) |>
+    group_by(Year, Model, Group) |>
+    summarise(
+        Count = n(),
+        MAE = mean(Absolute_Error),
+        .groups = "drop"
+    )
+
 write_csv(
     errors_by_status,
     "../../results/errors_by_status.csv"
@@ -234,5 +269,7 @@ save(
     errors_by_race,
     errors_by_driver,
     prediction_outliers,
+    errors_by_team,
+    errors_by_result_group,
     file = "../../data/processed/error_summaries.RData"
 )

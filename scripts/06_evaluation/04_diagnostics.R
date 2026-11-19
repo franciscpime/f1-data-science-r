@@ -1,3 +1,5 @@
+library(patchwork)
+
 #################################################################
 #             FEATURE CORRELATION AND MULTICOLLINEARITY         #
 # Checks whether some features contain similar information and  #
@@ -57,7 +59,7 @@ write_csv(
 #################################################################
 
 
-linear_models_residuals_2024_graph <- prediction_errors |>
+linear_models_residuals_2024 <- prediction_errors |>
     filter(
         Year == 2024,
         Model %in% c(
@@ -83,11 +85,18 @@ linear_models_residuals_2024_graph <- prediction_errors |>
         x = "Predicted Finishing Position",
         y = "Residual (Actual - Predicted)"
     ) +
-    theme_minimal()
+    theme(
+        plot.margin = margin(
+            t = 40,
+            r = 250,
+            b = 40,
+            l = 40
+        )
+    )
 
 ggsave(
-    "../../plots/residuals_vs_fitted.png",
-    plot = linear_models_residuals_2024_graph,
+    "../../plots/linear_models_residuals_2024.png",
+    plot = linear_models_residuals_2024,
     width = 12,
     height = 5,
     dpi = 300
@@ -126,13 +135,24 @@ linear_models_qq_2024_graph <- prediction_errors |>
         x = "Theoretical Quantiles",
         y = "Sample Quantiles"
     ) +
-    theme_minimal()
+    theme(
+        plot.margin = margin(
+            t = 40,
+            r = 250,
+            b = 40,
+            l = 40
+        )
+    )
+
+qq_with_notes_space <- linear_models_qq_2024_graph +
+    plot_spacer() +
+    plot_layout(widths = c(5, 1))
 
 ggsave(
-    "../../plots/residuals_qq_plot.png",
-    plot = linear_models_qq_2024_graph,
-    width = 12,
-    height = 5,
+    "../../plots/residuals_qq_TEST.png",
+    plot = qq_with_notes_space,
+    width = 20,
+    height = 7,
     dpi = 300
 )
 
@@ -222,4 +242,101 @@ ggsave(
     width = 13,
     height = 6,
     dpi = 300
+)
+
+
+errors_by_result_group_graph <- errors_by_result_group |>
+    ggplot(
+        aes(
+            x = Group, 
+            y = MAE,
+            fill = Model
+        )
+    ) +
+    geom_col( position = position_dodge(width = 0.8)) +
+    facet_wrap(~ Year, scales = "free_x") +
+    labs(
+        title = "Mean Absolute Error by Race Result, 2024 Validation vs 2025 Test"
+    ) +
+    theme_minimal()
+
+
+ggsave(
+    "../../plots/errors_by_result_group_graph.png",
+    plot = errors_by_result_group_graph
+)
+
+
+errors_by_team_graph <- errors_by_team |>
+    filter(Year == 2025) |>
+    ggplot(
+        aes(x = reorder(Team, MAE), y = MAE, fill = Model, )
+    ) + 
+    geom_col(position = position_dodge(width = 0.8)) +
+    labs(
+        title = "Mean Absolute Error by Team, 2025 Test",
+        x = "Teams"
+    ) +
+    coord_flip() +
+    theme_minimal()
+
+ggsave(
+    "../../plots/errors_by_team_graph.png",
+    plot = errors_by_team_graph
+)
+
+errors_by_driver_graph <- prediction_errors |>
+    filter(
+        Year == 2025, 
+        Model == "Recent Points LR", 
+        Status %in% c("Finished", "Lapped")
+    ) |>
+    group_by(Driver) |>
+    summarise(
+        Count = n(),
+        MAE = mean(Absolute_Error),
+        .groups = "drop"
+    ) |>
+    slice_max(order_by = MAE, n = 10, with_ties = FALSE) |>
+    ggplot(
+        aes(
+            x = reorder(Driver, MAE), y = MAE
+        )
+    ) +
+    geom_col() +
+    labs(
+        title = "Top 10 Drivers by Prediction Error, 2025 Test",
+        x = "Drivers",
+        y = "Mean Absolute Error (positions)"
+    ) +
+    coord_flip() +
+    theme_minimal()
+
+ggsave(
+    "../../plots/errors_by_driver_graph.png",
+    plot = errors_by_driver_graph
+)
+
+errors_by_race_graph <- errors_by_race |>
+    filter(
+        Year == 2025, 
+        Model == "Recent Points LR"
+    ) |>
+    slice_max(order_by = MAE, n = 10, with_ties = FALSE) |>
+    ggplot(
+        aes(
+            x = reorder(Race, MAE), y = MAE
+        )
+    ) +
+    geom_col() +
+    labs(
+        title = "Top 10 Races by Prediction Error, 2025 Test",
+        x = "Races"
+    ) +
+    coord_flip() +
+    theme_minimal()
+
+ggsave(
+    "../../plots/errors_by_race_graph.png",
+    plot = errors_by_race_graph
 )

@@ -158,12 +158,19 @@ models_error_distribution_2024_graph <- ggplot(
         x = "Prediction Error (Actual - Predicted)",
         y = "Number of Observations"
     ) +
-    theme_minimal()
+    theme(
+        plot.margin = margin(
+            t = 40,
+            r = 250,
+            b = 40,
+            l = 40
+        )
+    )
 
 ggsave(
     "../../plots/models_error_distribution_2024.png",
     plot = models_error_distribution_2024_graph,
-    width = 12,
-    height = 9,
+    width = 18,
+    height = 7,
     dpi = 300
 )
